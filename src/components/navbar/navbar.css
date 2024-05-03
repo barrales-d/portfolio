@@ -1,0 +1,23 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar-item {}
+
+.links {}
+
+.link-item {
+    color: white;
+    text-decoration: none;
+    padding-inline: 0.5rem;
+    transition: color 300ms ease;
+}
+
+.link-item:hover,
+.link-item:focus-visible,
+.link-item.active {
+    color: tomato;
+    text-decoration: underline;
+}

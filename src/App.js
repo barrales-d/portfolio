@@ -1,6 +1,7 @@
 import './App.css';
 import { Fragment } from 'react';
 import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Skills from './pages/Skills';
@@ -15,9 +16,7 @@ function App() {
         <Route path='/skills' element={<Skills />} />
         <Route path='/projects' element={<Projects />} />
       </Routes>
-      <footer>
-        <h5>Diego Barrales &copy; 2024</h5>
-      </footer>
+      <Footer />
     </Fragment>
   );
 }
