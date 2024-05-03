@@ -7,7 +7,7 @@ const Home = () => {
         <Fragment>
             <Header />
             <Container maxWidth="lg">
-                <main>
+                <main id="AboutMe">
                     <h1>About me!</h1>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
