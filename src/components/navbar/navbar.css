@@ -1,8 +1,15 @@
 .navbar {
-    display: grid;
+    display: flex;
     justify-content: space-between;
-    grid-template-columns: repeat(3, 1fr);
 }
+.navbar > * {
+    text-align: center;
+}
+
+.nav-title {
+    flex: 2 1 0;
+}
+
 .link-item {
     color: white;
     text-decoration: none;

@@ -34,7 +34,7 @@ const Navbar = () => {
               ))
             }
           </Box>
-          <Box>
+          <Box className="nav-title">
             <Typography variant="h5">
               <span className="pop">Diego</span> Barrales
             </Typography>
