@@ -1,11 +1,11 @@
 import './App.css';
-import { Fragment } from 'react';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Skills from './pages/Skills';
 import Projects from './pages/Projects';
+import { Fragment } from 'react';
 
 function App() {
   return (

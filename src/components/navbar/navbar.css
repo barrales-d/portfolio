@@ -1,13 +1,8 @@
 .navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, 1fr);
 }
-
-.navbar-item {}
-
-.links {}
-
 .link-item {
     color: white;
     text-decoration: none;
