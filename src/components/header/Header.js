@@ -1,6 +1,5 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import TestModal from "../modal/TestModal";
 import ModalBase from "../modal/ModalBase";
 
 const Header = () => {
@@ -35,19 +34,17 @@ const Header = () => {
           </Button> */}
           <ModalBase
             btnText="Resume"
-            title="Resume modal"
+            title="My Resume"
             description="My resume viewed from a modal"
           >
-            <Container maxWidth="sm" sx={{ backgroundColor: "#202020", width:"100vw", aspectRatio:"1" }}>
-              <Box
-                color="whitesmoke"
-              >
-                {/* <object ></object> */}
-                <Typography variant="h3">
-                  Will be a view of my resume
-                </Typography>
-              </Box>
-            </Container>
+            <Box
+              color="black"
+            >
+              {/* <object ></object> */}
+              <Typography variant="body1">
+                Will be a view of my resume
+              </Typography>
+            </Box>
           </ModalBase>
           <AnchorLink href="#AboutMe">
             <Button
@@ -60,7 +57,6 @@ const Header = () => {
         </Box>
       </Box>
 
-      <TestModal />
     </header>
   );
 }
