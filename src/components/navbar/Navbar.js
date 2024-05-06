@@ -16,11 +16,11 @@ const Navbar = () => {
   }
 
   return (
-    <AppBar component="nav" position="sticky" elevation="2">
+    <AppBar component="nav" position="sticky" elevation={3}>
       <Container maxWidth="lg">
         <Toolbar className="navbar">
           <Box sx={{
-            display: { xs: "none", md: "block" }
+            display: { xs: "none", md: "flex" }
           }}>
             {
               pages.map((page, idx) => (
@@ -31,7 +31,13 @@ const Navbar = () => {
                   key={page}
                   onClick={toggleActiveLink}
                 >
-                  {page}
+                  <Typography
+                    sx={{
+                      color: "inherit",
+                    }}
+                    >
+                    {page}
+                  </Typography>
                 </Link>
               ))
             }
