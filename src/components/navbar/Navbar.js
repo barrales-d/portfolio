@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import "./navbar.css";
-import { AppBar, Box, Button, Container, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Button, Container, List, ListItem, Toolbar, Typography } from "@mui/material";
 import { useState } from "react";
 
 const pages = ["Home", "Skills", "Projects"];
@@ -19,29 +19,31 @@ const Navbar = () => {
     <AppBar component="nav" position="sticky" elevation={3}>
       <Container maxWidth="lg">
         <Toolbar className="navbar">
-          <Box sx={{
+          <List sx={{
             display: { xs: "none", md: "flex" }
           }}>
             {
               pages.map((page, idx) => (
-                <Link
-                  data-value={idx}
-                  to={(idx === 0) ? "/" : "/" + page}
-                  className={(idx === currentPage) ? "link-item active" : "link-item"}
-                  key={page}
-                  onClick={toggleActiveLink}
-                >
-                  <Typography
-                    sx={{
-                      color: "inherit",
-                    }}
+                <ListItem>
+                  <Link
+                    data-value={idx}
+                    to={(idx === 0) ? "/" : "/" + page}
+                    className={(idx === currentPage) ? "link-item active" : "link-item"}
+                    key={page}
+                    onClick={toggleActiveLink}
+                  >
+                    <Typography
+                      sx={{
+                        color: "inherit",
+                      }}
                     >
-                    {page}
-                  </Typography>
-                </Link>
+                      {page}
+                    </Typography>
+                  </Link>
+                </ListItem>
               ))
             }
-          </Box>
+          </List>
           <Box className="nav-title">
             <Typography variant="h5">
               <span className="pop">Diego</span> Barrales
@@ -52,7 +54,7 @@ const Navbar = () => {
           </Box>
         </Toolbar>
       </Container>
-    </AppBar>
+    </AppBar >
   );
 }
 
