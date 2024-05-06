@@ -4,13 +4,46 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter } from 'react-router-dom';
+import { ThemeProvider, createTheme } from '@mui/material';
+import { orange, teal } from '@mui/material/colors';
+
+const theme = createTheme({
+  palette: {
+    // mode: 'dark',
+    primary: teal,
+    secondary: orange
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+        },
+        outlined: {
+        }
+      }
+    },
+    MuiAppBar: {
+      defaultProps: {
+        color: "inherit"
+      },
+      styleOverrides: {
+        root: {
+          backgroundColor: "#eee"
+        }
+      }
+    }
+  }
+
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HashRouter>
-      <App />
-    </HashRouter>
+    <ThemeProvider theme={theme}>
+      <HashRouter>
+        <App />
+      </HashRouter>
+    </ThemeProvider>
   </React.StrictMode>
 );
 

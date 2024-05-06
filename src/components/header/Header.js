@@ -2,9 +2,11 @@ import { Box, Button, Typography } from "@mui/material";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import ModalBase from "../modal/ModalBase";
 
+import './header.css';
+
 const Header = () => {
   return (
-    <header style={{ backgroundColor: "#202020" }}>
+    <header>
       <Box
         height="70svh"
         display="flex"
@@ -12,7 +14,6 @@ const Header = () => {
         justifyContent="center"
         alignItems="start"
         padding="4rem"
-        color="whitesmoke"
       >
         <Typography variant="h5">
           Software Developer,
@@ -25,21 +26,12 @@ const Header = () => {
         </Typography>
 
         <Box display="flex" justifyContent="space-evenly">
-          {/* <Button
-            color="secondary"
-            variant="outlined"
-            sx={{ marginInlineEnd: "0.5rem" }}
-          >
-            Resume
-          </Button> */}
           <ModalBase
             btnText="Resume"
             title="My Resume"
             description="My resume viewed from a modal"
           >
-            <Box
-              color="black"
-            >
+            <Box>
               {/* <object ></object> */}
               <Typography variant="body1">
                 Will be a view of my resume

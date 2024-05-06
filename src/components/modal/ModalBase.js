@@ -14,7 +14,12 @@ const ModalBase = ({
 
   return (
     <Fragment>
-      <Button onClick={openModal}>{btnText}</Button>
+      <Button
+        variant="outlined"
+        color="secondary"
+        onClick={openModal}>
+        {btnText}
+      </Button>
       <Modal
         open={isOpen}
         onClose={closeModal}
@@ -34,20 +39,21 @@ const ModalBase = ({
             transform: "translate(-50%, -50%)",
             width: 400,
             bgcolor: "background.paper",
+            color: "black",
             border: "2px solid #000",
             boxShadow: 24,
             p: 4,
             borderRadius: 4,
           }}>
-            <div style={{display:"flex", justifyContent:"space-between"}}>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
               <h2>
                 <Typography variant="h4">{title}</Typography>
               </h2>
-              <a onClick={closeModal} style={{cursor:"pointer"}}>
+              <Button onClick={closeModal} style={{ cursor: "pointer" }}>
                 <Typography variant="h4" aria-hidden="true">
                   &times;
                 </Typography>
-              </a>
+              </Button>
             </div>
             <hr />
             <div>

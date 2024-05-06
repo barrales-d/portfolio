@@ -12,20 +12,22 @@ const Navbar = () => {
 
   const toggleActiveLink = (event) => {
     const value = event.currentTarget.getAttribute("data-value");
-    setCurrentPage(value);
+    setCurrentPage(parseInt(value));
   }
 
   return (
-    <AppBar component="nav" position="sticky">
+    <AppBar component="nav" position="sticky" elevation="2">
       <Container maxWidth="lg">
         <Toolbar className="navbar">
-          <Box>
+          <Box sx={{
+            display: { xs: "none", md: "block" }
+          }}>
             {
               pages.map((page, idx) => (
                 <Link
                   data-value={idx}
-                  to={(idx == 0) ? "/" : "/" + page}
-                  className={(idx == currentPage) ? "link-item active" : "link-item"}
+                  to={(idx === 0) ? "/" : "/" + page}
+                  className={(idx === currentPage) ? "link-item active" : "link-item"}
                   key={page}
                   onClick={toggleActiveLink}
                 >
