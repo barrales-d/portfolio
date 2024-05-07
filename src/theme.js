@@ -1,7 +1,7 @@
 import { createTheme } from '@mui/material';
 import { createContext, useMemo, useState } from 'react';
 
-const colorpalette = (mode) => {
+export const colorpalette = (mode) => {
   if (mode === 'dark') {
     return {
       darkBlue: {
@@ -65,7 +65,7 @@ const colorpalette = (mode) => {
       },
 
       grey: {
-        100: "#d5d4d4",
+        100: "#f0f0f0",
         200: "#aba9aa",
         300: "#827e7f",
         400: "#585355",
@@ -147,7 +147,7 @@ const colorpalette = (mode) => {
         600: "#585355",
         700: "#827e7f",
         800: "#aba9aa",
-        900: "#d5d4d4"
+        900: "#f0f0f0"
       },
     };
   }
@@ -201,22 +201,22 @@ const themeSettings = (mode) => {
         fontSize: '1.5rem',
       },
     },
-    components: {
-      MuiAppBar: {
-        styleOverrides: {
-          root: {
-            backgroundColor: colors.grey[700]
-          }
-        }
-      }
-    }
+    // components: {
+    //   MuiAppBar: {
+    //     styleOverrides: {
+    //       root: {
+    //         backgroundColor: colors.grey[700]
+    //       }
+    //     }
+    //   }
+    // }
   }
 };
 
 export const ThemeContext = createContext();
 
 export const useMode = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
