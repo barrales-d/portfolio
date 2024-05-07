@@ -16,7 +16,6 @@ const ModalBase = ({
     <Fragment>
       <Button
         variant="outlined"
-        color="secondary"
         onClick={openModal}>
         {btnText}
       </Button>

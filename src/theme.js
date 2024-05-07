@@ -201,15 +201,24 @@ const themeSettings = (mode) => {
         fontSize: '1.5rem',
       },
     },
-    // components: {
-    //   MuiAppBar: {
-    //     styleOverrides: {
-    //       root: {
-    //         backgroundColor: colors.grey[700]
-    //       }
-    //     }
-    //   }
-    // }
+    components: {
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            fontWeight: 600,
+            textTransform: "capitalize",
+            letterSpacing: 1,
+            borderRadius: 5
+          },
+          outlined: {
+            border: "2px solid white",
+            "&:hover": {
+              border: "2px solid"
+            }
+          }
+        }
+      }
+    }
   }
 };
 

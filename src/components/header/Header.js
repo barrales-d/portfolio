@@ -1,19 +1,21 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography, useTheme } from "@mui/material";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import ModalBase from "../modal/ModalBase";
 
 import './header.css';
 
 const Header = () => {
+  const theme = useTheme();
   return (
     <header>
       <Box
-        height="70svh"
+        height="80svh"
         display="flex"
         flexDirection="column"
         justifyContent="center"
         alignItems="start"
         padding="4rem"
+        color={theme.palette.common.black}
       >
         <Typography variant="h5">
           Software Developer,
@@ -25,7 +27,7 @@ const Header = () => {
           lorem dare aomdods
         </Typography>
 
-        <Box display="flex" justifyContent="space-evenly">
+        <Box my={2} display="flex" justifyContent="space-evenly" alignItems="center">
           <ModalBase
             btnText="Resume"
             title="My Resume"
@@ -41,7 +43,7 @@ const Header = () => {
           <AnchorLink href="#AboutMe">
             <Button
               variant="contained"
-              sx={{ marginInlineStart: "0.5rem" }}
+              sx={{ marginInlineStart: 1}}
             >
               Learn more
             </Button>
