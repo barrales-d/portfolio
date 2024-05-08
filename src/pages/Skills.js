@@ -1,43 +1,39 @@
-import { Container } from "@mui/material";
+import { Box, Container, Grid, LinearProgress, Typography, linearProgressClasses, useTheme } from "@mui/material";
+import { skills } from "../data/skills";
 
 const Skills = () => {
-    return (
-        <Container maxWidth="lg">
-            <main>
-                <h1>My Skills!</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                </p>
-            </main>
-        </Container>
-    );
+  const theme = useTheme();
+  return (
+    <Container maxWidth="lg" sx={{ textAlign: "center" }}>
+      <main>
+        <Typography variant="h2" my={3}>My Skills</Typography>
+        <Grid container spacing={6}>
+          {
+            skills.map(skill => (
+              <Grid item xs={12} md={6}>
+                <Box display="flex" justifyContent="space-between" alignItems="baseline">
+                  <Typography variant="h6">{skill.name}</Typography>
+                  <Typography variant="body2">{skill.progress}&#37;</Typography>
+                </Box>
+                <Box width="100%">
+                  <LinearProgress
+                    variant="determinate"
+                    value={skill.progress}
+                    sx={{
+                      height: 12,
+                      borderRadius: 5,
+                      [`& .${linearProgressClasses.bar}`]: {
+                        borderRadius: 5,
+                      }
+                    }} />
+                </Box>
+              </Grid>
+            ))
+          }
+        </Grid>
+      </main>
+    </Container>
+  );
 }
 
 export default Skills;

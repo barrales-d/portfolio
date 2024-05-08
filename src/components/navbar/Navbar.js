@@ -6,6 +6,8 @@ import { useContext, useState } from "react";
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import { ThemeContext, colorpalette } from "../../theme";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import { HashLink } from "react-router-hash-link";
 
 const pages = ["Home", "Skills", "Projects"];
 
@@ -32,7 +34,6 @@ const Navbar = () => {
                   <ListItem
                     key={page}
                     data-value={idx}
-                    onClick={toggleActiveLink}
                     className="link-item"
                     sx={{
                       cursor: "pointer",
@@ -42,7 +43,7 @@ const Navbar = () => {
                       },
                     }}
                   >
-                    <Link style={(idx !== currentPage) ? {
+                    <Link onClick={toggleActiveLink} style={(idx !== currentPage) ? {
                       color: "inherit",
                       textDecoration: "inherit",
                     } : {
@@ -60,7 +61,9 @@ const Navbar = () => {
             <Typography variant="h5">Diego Barrales</Typography>
 
             <Box display="flex">
-              <Button variant="contained">Contact Me</Button>
+              <HashLink to="/#ContactMe" smooth>
+                <Button variant="contained">Contact Me</Button>
+              </HashLink>
               <IconButton onClick={toggleTheme}>
                 {
                   isDarkMode ?
@@ -72,7 +75,7 @@ const Navbar = () => {
           </Box>
         </Toolbar>
       </Box>
-    </AppBar >
+    </AppBar>
   );
 }
 

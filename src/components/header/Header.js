@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header>
       <Box
-        height="80svh"
+        height="90svh"
         display="flex"
         flexDirection="column"
         justifyContent="center"
