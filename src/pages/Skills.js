@@ -1,8 +1,7 @@
-import { Box, Container, Grid, LinearProgress, Typography, linearProgressClasses, useTheme } from "@mui/material";
+import { Box, Container, Grid, LinearProgress, Typography, linearProgressClasses } from "@mui/material";
 import { skills } from "../data/skills";
 
 const Skills = () => {
-  const theme = useTheme();
   return (
     <Container maxWidth="lg" sx={{ textAlign: "center" }}>
       <main>

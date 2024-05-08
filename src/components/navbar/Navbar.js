@@ -6,7 +6,6 @@ import { useContext, useState } from "react";
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import { ThemeContext, colorpalette } from "../../theme";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import { HashLink } from "react-router-hash-link";
 
 const pages = ["Home", "Skills", "Projects"];
