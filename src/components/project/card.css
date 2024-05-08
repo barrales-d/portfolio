@@ -1,0 +1,6 @@
+.limit-text {
+    display: inline-block;
+    overflow-y: hidden !important;
+    text-overflow: ellipsis;
+    text-wrap: pretty;
+}

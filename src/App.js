@@ -8,6 +8,8 @@ import Projects from './pages/Projects';
 import { Fragment } from 'react';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { ThemeContext, useMode } from './theme';
+import { projects } from './data/projects';
+import ProjectView from './pages/ProjectView';
 
 function App() {
   const [theme, themeValue] = useMode();
@@ -20,8 +22,13 @@ function App() {
           <Navbar />
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/skills' element={<Skills />} />
+            <Route path='/skills/*' element={<Skills />} />
             <Route path='/projects' element={<Projects />} />
+              {
+                projects.map((p, idx) => (
+                  <Route path={'/projects/' + idx.toString()} element={<ProjectView project={p} />} key={'project-' + idx.toString()} />
+                ))
+              }
           </Routes>
           <Footer />
         </ThemeProvider>

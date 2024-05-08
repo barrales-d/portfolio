@@ -49,7 +49,7 @@ const Navbar = () => {
                       color: colors.orange[400],
                       textDecoration: "underline solid 2px"
                     }}
-                      to={(idx === 0) ? "/" : `/${page}`}>
+                      to={(idx === 0) ? "/" : `/${page.toLowerCase()}`}>
                       {page}
                     </Link>
                   </ListItem>

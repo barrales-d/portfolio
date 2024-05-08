@@ -1,21 +1,27 @@
-import { Container } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
+import { projects } from "../data/projects";
+import ProjectCard from "../components/project/ProjectCard";
 
 const Projects = () => {
-    return (
-        <Container maxWidth="lg">
-            <main>
-                <h1>My Projects!</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </main>
-        </Container>
-    );
+  return (
+    <Container maxWidth="lg" sx={{ textAlign: "center" }}>
+      <main>
+        <Box my={3}>
+          <Typography variant="h2">My Projects</Typography>
+          <Typography>Things I've built for school and personal projects</Typography>
+        </Box>
+        <Grid container spacing={4}>
+          {
+            projects.map((p, idx) => (
+              <Grid item xs={12} sm={6} md={4} key={p.title + '-' + idx.toString()}>
+                <ProjectCard project={p} id={idx.toString()} />
+              </Grid>
+            ))
+          }
+        </Grid>
+      </main>
+    </Container>
+  );
 }
 
 export default Projects;
