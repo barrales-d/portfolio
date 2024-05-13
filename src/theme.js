@@ -65,7 +65,7 @@ export const colorpalette = (mode) => {
       },
 
       grey: {
-        100: "#f0f0f0",
+        100: "#e0e0e0",
         200: "#aba9aa",
         300: "#827e7f",
         400: "#585355",
@@ -147,7 +147,7 @@ export const colorpalette = (mode) => {
         600: "#585355",
         700: "#827e7f",
         800: "#aba9aa",
-        900: "#f0f0f0"
+        900: "#e0e0e0"
       },
     };
   }

@@ -32,25 +32,22 @@ const Navbar = () => {
                 pages.map((page, idx) => (
                   <ListItem
                     key={page}
-                    data-value={idx}
                     className="link-item"
-                    sx={{
-                      cursor: "pointer",
-                      "&:hover": {
-                        color: colors.orange[400],
-                        textDecoration: "underline solid 2px"
-                      },
-                    }}
                   >
-                    <Link onClick={toggleActiveLink} style={(idx !== currentPage) ? {
-                      color: "inherit",
-                      textDecoration: "inherit",
-                    } : {
-                      color: colors.orange[400],
-                      textDecoration: "underline solid 2px"
-                    }}
-                      to={(idx === 0) ? "/" : `/${page.toLowerCase()}`}>
-                      {page}
+                    <Link data-value={idx} onClick={toggleActiveLink} to={(idx === 0) ? "/" : `/${page.toLowerCase()}`}>
+                      <Typography sx={{
+                        cursor: "pointer",
+                        color:
+                          currentPage === idx
+                            ? colors.orange[400]
+                            : colors.grey[100],
+                        textDecoration: "underline solid 2px",
+                        "&:hover": {
+                          color: colors.orange[400],
+                        },
+                      }}>
+                        {page}
+                      </Typography>
                     </Link>
                   </ListItem>
                 ))
@@ -61,7 +58,7 @@ const Navbar = () => {
 
             <Box display="flex">
               <HashLink to="/#ContactMe" smooth>
-                <Button variant="contained">Contact Me</Button>
+                <Button data-value='0' onClick={toggleActiveLink} variant="contained">Contact Me</Button>
               </HashLink>
               <IconButton onClick={toggleTheme}>
                 {
