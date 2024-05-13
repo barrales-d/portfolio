@@ -1,6 +1,39 @@
-import { Box, Container } from "@mui/material";
+import { Box, Container, Grid, IconButton, Typography } from "@mui/material";
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import ChatIcon from '@mui/icons-material/Chat';
 
 const Footer = () => {
+
+  const Socials = () => {
+    return (
+      <Grid container spacing={0.5} alignItems="center" justifyContent="center" textAlign="center">
+        <Grid item xs={3} md={3}>
+          <IconButton size="small">
+            <GitHubIcon />
+          </IconButton>
+        </Grid>
+        <Grid item xs={3} md={3}>
+          <IconButton size="small">
+            <LinkedInIcon />
+          </IconButton>
+        </Grid>
+        <Grid item xs={3} md={3}>
+          <IconButton size="small">
+            <InstagramIcon />
+          </IconButton>
+        </Grid>
+        <Grid item xs={3} md={3}>
+          <IconButton size="small">
+            <ChatIcon />
+          </IconButton>
+        </Grid>
+
+      </Grid>
+    );
+  }
+
   return (
     <footer>
       <Box sx={{
@@ -14,7 +47,34 @@ const Footer = () => {
             : theme.palette.grey[900],
       }}>
         <Container maxWidth="lg">
-          <h5>Diego Barrales &copy; 2024</h5>
+          <Grid container spacing={0} rowSpacing={5} alignItems="center" justifyContent="center" textAlign="center">
+            <Grid item xs={12} sm={3} textAlign="start">
+              <Typography variant="body2">
+                Do not hesitate to contact me to discuss possible work or learn more about my work.
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <Typography variant="body2">
+                &copy; {new Date().getFullYear()} created by Diego Barrales
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={5}>
+              <Grid container spacing={2} rowSpacing={5} alignItems="baseline" textAlign="center">
+                <Grid item xs={12} md={4}>
+                  <Typography variant="body2" sx={{ borderBottom: "0.1rem dotted" }}>Call</Typography>
+                  <Typography variant="body2">(123)-233-2893</Typography>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                  <Typography variant="body2" sx={{ borderBottom: "0.1rem dotted" }}>Email</Typography>
+                  <Typography variant="body2">dbarrales@gmail.com</Typography>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                  <Typography variant="body2" sx={{ borderBottom: "0.1rem dotted" }}>Follow</Typography>
+                  <Socials />
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
         </Container>
       </Box>
     </footer>
