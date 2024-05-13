@@ -42,6 +42,10 @@ const Navbar = () => {
                             ? colors.orange[400]
                             : colors.grey[100],
                         textDecoration: "underline solid 2px",
+                        fontWeight:
+                          currentPage === idx
+                            ? "700"
+                            : "500",
                         "&:hover": {
                           color: colors.orange[400],
                         },
