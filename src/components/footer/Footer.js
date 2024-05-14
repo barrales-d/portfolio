@@ -2,7 +2,6 @@ import { Box, Container, Grid, IconButton, Typography } from "@mui/material";
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import ChatIcon from '@mui/icons-material/Chat';
 
 const Footer = () => {
 
@@ -10,26 +9,20 @@ const Footer = () => {
     return (
       <Grid container spacing={0.5} alignItems="center" justifyContent="center" textAlign="center">
         <Grid item xs={3} md={3}>
-          <IconButton size="small">
+          <IconButton size="small" href="https://github.com/barrales-d" target="_blank">
             <GitHubIcon />
           </IconButton>
         </Grid>
         <Grid item xs={3} md={3}>
-          <IconButton size="small">
+          <IconButton size="small" href="https://www.linkedin.com/in/diego-barrales-514aa61bb/" target="_blank">
             <LinkedInIcon />
           </IconButton>
         </Grid>
         <Grid item xs={3} md={3}>
-          <IconButton size="small">
+          <IconButton size="small" href="https://www.instagram.com/diegobarrales._/" target="_blank">
             <InstagramIcon />
           </IconButton>
         </Grid>
-        <Grid item xs={3} md={3}>
-          <IconButton size="small">
-            <ChatIcon />
-          </IconButton>
-        </Grid>
-
       </Grid>
     );
   }
@@ -60,15 +53,11 @@ const Footer = () => {
             </Grid>
             <Grid item xs={12} sm={5}>
               <Grid container spacing={2} rowSpacing={5} alignItems="baseline" textAlign="center">
-                <Grid item xs={12} md={4}>
-                  <Typography variant="body2" sx={{ borderBottom: "0.1rem dotted" }}>Call</Typography>
-                  <Typography variant="body2">(123)-233-2893</Typography>
-                </Grid>
-                <Grid item xs={12} md={4}>
+                <Grid item xs={12} md={6}>
                   <Typography variant="body2" sx={{ borderBottom: "0.1rem dotted" }}>Email</Typography>
                   <Typography variant="body2">dbarrales@gmail.com</Typography>
                 </Grid>
-                <Grid item xs={12} md={4}>
+                <Grid item xs={12} md={6}>
                   <Typography variant="body2" sx={{ borderBottom: "0.1rem dotted" }}>Follow</Typography>
                   <Socials />
                 </Grid>
