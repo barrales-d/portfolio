@@ -32,7 +32,7 @@ const Footer = () => {
       <Box sx={{
         py: 2,
         px: 2,
-        mt: 4,
+        // mt: 4,
         opacity: "0.8",
         bgcolor: (theme) =>
           theme.palette.mode === "light"

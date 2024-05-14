@@ -4,7 +4,7 @@ import ProjectCard from "../components/project/ProjectCard";
 
 const Projects = () => {
   return (
-    <Container maxWidth="lg" sx={{ textAlign: "center" }}>
+    <Container maxWidth="lg" sx={{ textAlign: "center", marginBottom: 4 }}>
       <main>
         <Box my={3}>
           <Typography variant="h2">My Projects</Typography>

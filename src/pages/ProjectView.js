@@ -1,14 +1,53 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, Paper, Typography, alpha, styled } from "@mui/material";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
+import '../App.css';
 
 const ProjectView = ({ project }) => {
+  const ProjectArea = styled(Paper)(({ theme }) => ({
+    color:
+      theme.palette.mode === 'dark'
+        ? theme.palette.grey[100]
+        : theme.palette.grey[900],
+
+    backgroundColor:
+      theme.palette.mode === 'dark'
+        ? alpha(theme.palette.common.black, 0.3)
+        : alpha(theme.palette.common.white, 0.3),
+    height: "90%",
+    width: "max-content",
+    margin: 24,
+    padding: 24,
+    overflowY: "auto",
+    overscrollBehavior: "contain",
+    borderRadius: 0,
+    backdropFilter: "blur(1rem)",
+  }));
   return (
     <Fragment>
-      <Box p={12}>
-        <h2>Project View</h2>
-        <h3>{project.title}</h3>
-        <Link to="/projects/"><Button>Close</Button></Link>
+      <Box position="relative" height="75svh">
+        <img id="project-image" alt={`${project.title}`} src={require(`../assets/${project.image}`)} />
+        <ProjectArea elevation={5}>
+          <Typography component="h1" variant="h4" fontWeight={700}  mb={1}>{project.title}</Typography>
+          <Box textAlign="justify" sx={{
+            maxWidth: { xs: "25ch", sm: "40ch", md: "75ch" }
+          }}>
+            <Typography variant="body2" className="paragraph" mb={2}>
+              {project.short_desc}
+            </Typography>
+            {
+              project.long_desc.split('\n\n').map(text => (
+                <Typography mb={1} className="paragraph">{text}</Typography>
+              ))
+            }
+            {/* <Typography variant="body1">
+              {project.long_desc}
+            </Typography> */}
+          </Box>
+          <Box textAlign="end">
+            <Link to="/projects/"><Button variant="contained">Close</Button></Link>
+          </Box>
+        </ProjectArea>
       </Box>
     </Fragment>
   );

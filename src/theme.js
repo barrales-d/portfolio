@@ -189,7 +189,7 @@ const themeSettings = (mode) => {
         fontSize: '3.5rem',
       },
       h3: {
-        fontSize: '3rem',
+        fontSize: {xs: '1.5rem', md: '3rem'},
       },
       h4: {
         fontSize: '2.5rem',

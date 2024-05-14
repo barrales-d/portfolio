@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <Fragment>
       <Header />
-      <Container maxWidth="lg" sx={{ textAlign: "center" }}>
+      <Container maxWidth="lg" sx={{ textAlign: "center", marginBottom: 4}}>
         <main>
           <section id="AboutMe">
             <Typography variant="h2" my={3}>About me!</Typography>

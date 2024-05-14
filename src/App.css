@@ -1,3 +1,14 @@
-.pop {
-  accent-color: red;
+#project-image {
+  /* opacity: 0.8; */
+  z-index: -1;
+  width: 100svw;
+  height: 100%;
+  padding-block-start: 0.5rem;
+  position: absolute;
+  object-fit: cover;
+}
+
+.paragraph::first-letter {
+  text-transform: capitalize;
+  padding-left: 4ch;
 }
