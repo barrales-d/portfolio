@@ -1,8 +1,8 @@
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import ModalBase from "../modal/ModalBase";
 
 import './header.css';
+import ResumeModal from "../modal/ResumeModal";
 
 const Header = () => {
   const theme = useTheme();
@@ -28,22 +28,15 @@ const Header = () => {
         </Typography>
 
         <Box my={2} display="flex" justifyContent="space-evenly" alignItems="center">
-          <ModalBase
+          <ResumeModal
             btnText="Resume"
             title="My Resume"
             description="My resume viewed from a modal"
-          >
-            <Box>
-              {/* <object ></object> */}
-              <Typography variant="body1">
-                Will be a view of my resume
-              </Typography>
-            </Box>
-          </ModalBase>
+          />
           <AnchorLink href="#AboutMe">
             <Button
               variant="contained"
-              sx={{ marginInlineStart: 1}}
+              sx={{ marginInlineStart: 1 }}
             >
               Learn more
             </Button>

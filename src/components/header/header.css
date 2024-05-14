@@ -15,3 +15,8 @@ header::before {
     z-index: -1;
     transform: skewY(-5deg);
 }
+
+.pdf {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+}
