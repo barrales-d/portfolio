@@ -40,9 +40,6 @@ const ProjectView = ({ project }) => {
                 <Typography mb={1} className="paragraph">{text}</Typography>
               ))
             }
-            {/* <Typography variant="body1">
-              {project.long_desc}
-            </Typography> */}
           </Box>
           <Box textAlign="end">
             <Link to="/projects/"><Button variant="contained">Close</Button></Link>

@@ -3,7 +3,6 @@
   z-index: -1;
   width: 100svw;
   height: 100%;
-  padding-block-start: 0.5rem;
   position: absolute;
   object-fit: cover;
 }
