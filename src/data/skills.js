@@ -1,26 +1,26 @@
 export const skills = [
   {
-    name: "loerem dare",
-    progress: 50
+    name: "C++",
+    progress: 90
   },
   {
-    name: "loerem dare",
-    progress: 50
+    name: "HTML / CSS / Javascript",
+    progress: 85
   },
   {
-    name: "loerem dare",
-    progress: 50
+    name: "Python",
+    progress: 75
   },
   {
-    name: "loerem dare",
-    progress: 50
+    name: "Problem Solving",
+    progress: 95
   },
   {
-    name: "loerem dare",
-    progress: 50
+    name: "Data Structures and Algorithms",
+    progress: 60
   },
   {
-    name: "loerem dare",
-    progress: 50
+    name: "Organization",
+    progress: 68
   },
 ];
