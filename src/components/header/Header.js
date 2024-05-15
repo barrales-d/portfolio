@@ -17,14 +17,19 @@ const Header = () => {
         padding="4rem"
         color={theme.palette.common.black}
       >
-        <Typography variant="h5">
-          Software Developer,
+        <Typography variant="h6">
+          Software Developer
         </Typography>
-        <Typography variant="h1">
-          Diego Barrales
+        <Typography variant="h1" sx={{
+          fontStyle: "italic",
+          fontWeight: 700,
+        }}>
+          Diego <Typography component="span" variant="h1" sx={{ fontStyle: "inherit", fontWeight: "inherit", color: theme.palette.secondary.dark }}>
+            Barrales
+          </Typography>
         </Typography>
-        <Typography variant="body2">
-          lorem dare aomdods
+        <Typography variant="body2" maxWidth="50ch">
+          I am a passionate Mexican American who loves to program. I enjoy coding in C++, Python, and Javascript to develop simple and complex projects.
         </Typography>
 
         <Box my={2} display="flex" justifyContent="space-evenly" alignItems="center">
@@ -43,7 +48,7 @@ const Header = () => {
           </AnchorLink>
         </Box>
       </Box>
-
+      {/* TODO: put face here or in about me section */}
     </header>
   );
 }
