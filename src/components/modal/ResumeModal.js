@@ -1,4 +1,4 @@
-import { Backdrop, Box, Button, Fade, Modal, Typography, bottomNavigationActionClasses } from "@mui/material";
+import { Backdrop, Box, Button, Fade, Modal, Typography } from "@mui/material";
 import { Fragment, useState } from "react";
 import '../header/header.css';
 
@@ -55,7 +55,7 @@ const ResumeModal = ({
                 display: { xs: 'none', md: 'block' }
               }}>
               <Box>
-                <iframe className="pdf" src={require('../../data/Barrales_Diego_Resume.pdf')} width="1000" height="500" ></iframe>
+                <iframe title={title} className="pdf" src={require('../../data/Barrales_Diego_Resume.pdf')} width="1000" height="500" ></iframe>
               </Box>
             </Box>
 
