@@ -8,7 +8,7 @@ const Projects = () => {
       <main>
         <Box my={3}>
           <Typography variant="h2">My Projects</Typography>
-          <Typography>Things I've built for school and personal projects</Typography>
+          <Typography>Stuff I've built for school and personal projects</Typography>
         </Box>
         <Grid container spacing={4}>
           {

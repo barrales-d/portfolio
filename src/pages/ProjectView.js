@@ -16,6 +16,7 @@ const ProjectView = ({ project }) => {
         : alpha(theme.palette.common.white, 0.3),
     height: "90%",
     width: "max-content",
+    [theme.breakpoints.down('sm')]: {width: "auto"},
     margin: 24,
     padding: 24,
     overflowY: "auto",
@@ -25,19 +26,19 @@ const ProjectView = ({ project }) => {
   }));
   return (
     <Fragment>
-      <Box position="relative" height="75svh">
+      <Box position="relative" height="max-content">
         <img id="project-image" alt={`${project.title}`} src={require(`../assets/${project.image}`)} />
         <ProjectArea elevation={5}>
-          <Typography component="h1" variant="h4" fontWeight={700}  mb={1}>{project.title}</Typography>
+          <Typography component="h1" variant="h4" fontWeight={700} mb={1}>{project.title}</Typography>
           <Box textAlign="justify" sx={{
-            maxWidth: { xs: "25ch", sm: "40ch", md: "75ch" }
+            maxWidth: { xs: "40ch", md: "75ch" }
           }}>
             <Typography variant="body2" className="paragraph" mb={2}>
               {project.short_desc}
             </Typography>
             {
-              project.long_desc.split('\n\n').map(text => (
-                <Typography mb={1} className="paragraph">{text}</Typography>
+              project.long_desc.split('\n\n').map((text, idx) => (
+                <Typography mb={1} className="paragraph" key={'para-' + idx.toString()}>{text}</Typography>
               ))
             }
           </Box>

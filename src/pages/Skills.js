@@ -6,10 +6,10 @@ const Skills = () => {
     <Container maxWidth="lg" sx={{ textAlign: "center" }}>
       <main>
         <Typography variant="h2" my={3}>My Skills</Typography>
-        <Grid container spacing={6}>
+        <Grid container mb={4} spacing={6}>
           {
             skills.map(skill => (
-              <Grid item xs={12} md={6}>
+              <Grid item key={skill.name + '-' + skill.progress} xs={12} md={6}>
                 <Box display="flex" justifyContent="space-between" alignItems="baseline">
                   <Typography variant="h6">{skill.name}</Typography>
                   <Typography variant="body2">{skill.progress}&#37;</Typography>

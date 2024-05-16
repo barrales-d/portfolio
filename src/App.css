@@ -4,6 +4,7 @@
   width: 100svw;
   height: 100%;
   position: absolute;
+  overflow: hidden;
   object-fit: cover;
 }
 
