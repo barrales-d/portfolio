@@ -1,16 +1,34 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
+import { Button, Card, CardActions, CardContent, CardMedia, Skeleton, Typography } from "@mui/material";
 import './card.css';
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 // project: { title, image, github, short_desc, long_desc }
 const ProjectCard = ({ project, id }) => {
+
+  const imageHeight = 150;
+
+  const [projectImage, setProjectImage] = useState(null);
+
+  useEffect(() => {
+    const image = require(`../../assets/${project.image}`);
+
+    setTimeout(() => { setProjectImage(image); }, 500);
+  }, [project.image]);
+
   return (
     <Card sx={{ maxWidth: 320, textAlign: "start" }}>
-      <CardMedia
-        sx={{ maxHeight: 150 }}
-        image={require(`../../assets/${project.image}`)}
-        title={project.title}
-        component="img" />
+      {
+        projectImage ? (
+          <CardMedia
+            sx={{ maxHeight: imageHeight }}
+            image={projectImage}
+            title={project.title}
+            component="img" />
+        ) : (
+          <Skeleton variant="rectangular" height={imageHeight} width={320} />
+        )
+      }
       <CardContent>
         <Typography gutterBottom variant="h5">
           {project.title}
