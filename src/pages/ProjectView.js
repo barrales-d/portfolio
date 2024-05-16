@@ -26,7 +26,7 @@ const ProjectView = ({ project }) => {
   }));
   return (
     <Fragment>
-      <Box position="relative" height="max-content">
+      <Box position="relative">
         <img id="project-image" alt={`${project.title}`} src={require(`../assets/${project.image}`)} />
         <ProjectArea elevation={5}>
           <Typography component="h1" variant="h4" fontWeight={700} mb={1}>{project.title}</Typography>

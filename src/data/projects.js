@@ -31,26 +31,15 @@ export const projects = [
     title: "Qubic",
     image: "qubic-ai-gui.jpg",
     github: "https://github.com/barrales-d/Qubic",
-    short_desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eius voluptatibus beatae pariatur quia, reprehenderit id ipsa odio nobis nisi laudantium quos, qui dolorem blanditiis quae quisquam modi delectus rerum!",
-    long_desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eius voluptatibus beatae pariatur quia, reprehenderit id ipsa odio nobis nisi laudantium quos, qui dolorem blanditiis quae quisquam modi delectus rerum! 
-    
-    elit. Tempora eius voluptatibus beatae pariatur quia, reprehenderit id ipsa odio nobis nisi laudantium quos, qui dolorem blanditiis quae quisquam modi delectus rerum!
-    
-    elit. Tempora eius voluptatibus beatae pariatur quia, reprehenderit id ipsa odio nobis nisi laudantium quos, qui dolorem blanditiis quae quisquam modi delectus rerum!
-    
-    elit. Tempora eius voluptatibus beatae pariatur quia, reprehenderit id ipsa odio nobis nisi laudantium quos, qui dolorem blanditiis quae quisquam modi delectus rerum!`,
+    short_desc: "A 3D tic-tac-toe game: Qubic, created for my AI course.",
+    long_desc: `
+    Qubic is a 3D tic-tac-toe variant in which two players take turns to place pieces on a 4x4x4 cube board consisting of 64 cells.
+    The goal is to get four pieces lined up in a row. I wanted to implement a competitive AI agent that humans can play against.
+    In addition, I created a way to visualize the game graphical user interface that humans can use to play the game.
+    \n\n
+    Since this game is a competitive environment, the algorithms I decided to implement were two Adversarial Search Algorithms: 
+    MiniMax and Alpha Beta Pruning. I wrote these algortihms with a max depth limit because the game tree does grow fairly large.
+    Due to these space limitations, These are not Perfect Players, meaning they make mistakes when figuring out the next best move.`,
   },
-  {
-    title: "Console Graphics",
-    image: "my-hero-dragon.png",
-    github: "",
-    short_desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eius voluptatibus beatae pariatur quia, reprehenderit id ipsa odio nobis nisi laudantium quos, qui dolorem blanditiis quae quisquam modi delectus rerum!",
-    long_desc: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eius voluptatibus beatae pariatur quia, reprehenderit id ipsa odio nobis nisi laudantium quos, qui dolorem blanditiis quae quisquam modi delectus rerum! 
-    
-    elit. Tempora eius voluptatibus beatae pariatur quia, reprehenderit id ipsa odio nobis nisi laudantium quos, qui dolorem blanditiis quae quisquam modi delectus rerum!
-    
-    elit. Tempora eius voluptatibus beatae pariatur quia, reprehenderit id ipsa odio nobis nisi laudantium quos, qui dolorem blanditiis quae quisquam modi delectus rerum!
-    
-    elit. Tempora eius voluptatibus beatae pariatur quia, reprehenderit id ipsa odio nobis nisi laudantium quos, qui dolorem blanditiis quae quisquam modi delectus rerum!`,
-  },
+  // TODO: Add more projects and add more content to exists one to make a full blog post
 ]
