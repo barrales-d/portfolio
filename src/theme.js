@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material';
-import { createContext, useMemo, useState } from 'react';
+import { createContext, useLayoutEffect, useMemo, useState } from 'react';
 
 export const colorpalette = (mode) => {
   if (mode === 'dark') {
@@ -225,7 +225,23 @@ const themeSettings = (mode) => {
 export const ThemeContext = createContext();
 
 export const useMode = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+  const prefersNotSet = window.matchMedia('(prefers-color-scheme: no-preference)').matches;
+
+  useLayoutEffect(() => {
+    if (prefersDark) {
+      setIsDarkMode(true);
+    }
+    if (prefersLight) {
+      setIsDarkMode(false);
+    }
+    if (prefersNotSet) {
+      setIsDarkMode(true);
+    }
+  }, [prefersDark, prefersLight, prefersNotSet]);
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
