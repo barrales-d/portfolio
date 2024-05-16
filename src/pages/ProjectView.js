@@ -8,7 +8,7 @@ const ProjectView = ({ project }) => {
     color:
       theme.palette.mode === 'dark'
         ? theme.palette.grey[100]
-        : theme.palette.grey[900],
+        : theme.palette.common.black,
 
     backgroundColor:
       theme.palette.mode === 'dark'
@@ -30,8 +30,9 @@ const ProjectView = ({ project }) => {
         <img id="project-image" alt={`${project.title}`} src={require(`../assets/${project.image}`)} />
         <ProjectArea elevation={5}>
           <Typography component="h1" variant="h4" fontWeight={700} mb={1}>{project.title}</Typography>
-          <Box textAlign="justify" sx={{
-            maxWidth: { xs: "40ch", md: "75ch" }
+          <Box textAlign="start" sx={{
+            maxWidth: { xs: "40ch", md: "75ch" },
+            textWrap: "pretty"
           }}>
             <Typography variant="body2" className="paragraph" mb={2}>
               {project.short_desc}

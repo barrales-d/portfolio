@@ -7,26 +7,27 @@ import { useEffect, useState } from "react";
 const ProjectCard = ({ project, id }) => {
 
   const imageHeight = 150;
+  const cardWidth = 320;
 
   const [projectImage, setProjectImage] = useState(null);
 
   useEffect(() => {
     const image = require(`../../assets/${project.image}`);
-
-    setTimeout(() => { setProjectImage(image); }, 500);
+    setProjectImage(image);
   }, [project.image]);
 
   return (
-    <Card sx={{ maxWidth: 320, textAlign: "start" }}>
+    <Card sx={{ maxWidth: cardWidth, textAlign: "start" }}>
       {
         projectImage ? (
           <CardMedia
             sx={{ maxHeight: imageHeight }}
             image={projectImage}
             title={project.title}
-            component="img" />
+            component="img"
+            loading="lazy" />
         ) : (
-          <Skeleton variant="rectangular" height={imageHeight} width={320} />
+          <Skeleton variant="rectangular" height={imageHeight} width={cardWidth} />
         )
       }
       <CardContent>
