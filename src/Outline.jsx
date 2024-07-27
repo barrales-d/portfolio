@@ -10,7 +10,7 @@ const Outline = () => {
       <nav>
         <Navbar />
       </nav>
-      <Box component="main" maxHeight='100svh'>
+      <Box component="main">
         <Container>
           <Outlet />
         </Container>

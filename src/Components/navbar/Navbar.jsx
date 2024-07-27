@@ -37,11 +37,13 @@ const Navbar = ({ window }) => {
               backgroundColor: `${theme.palette.primary.light}`,
             }
           }}>
-            <ListItemButton
-              onClick={() => { toggleActiveBtn(idx) }}
-              sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
+            <Link to={(item === 'Home' ? '/' : item)} style={{ all: 'inherit'}}>
+              <ListItemButton
+                onClick={() => { toggleActiveBtn(idx) }}
+                sx={{ textAlign: 'center' }}>
+                <ListItemText primary={item} />
+              </ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>

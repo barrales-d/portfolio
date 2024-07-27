@@ -22,7 +22,7 @@ const Footer = () => {
                         Do not hesitate to contact me to discuss possible work or learn more about my work.
                     </Typography>
                     <Typography variant="body2">
-                        &copy; 2024 created by Diego Barrales
+                        &copy; {new Date().getFullYear()} created by Diego Barrales
                     </Typography>
                     <Typography variant="body2">
                         dbarrales06@gmail.com
