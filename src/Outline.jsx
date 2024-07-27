@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "./Components/navbar/Navbar";
+import Navbar from "./Components/Navbar";
 import { Box, Container } from "@mui/material";
-import Footer from "./Components/footer/Footer";
+import Footer from "./Components/Footer";
 
 const Outline = () => {
   return (
