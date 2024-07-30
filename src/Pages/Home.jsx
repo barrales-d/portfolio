@@ -51,3 +51,6 @@ const Home = () => {
 }
 
 export default Home;
+
+// TODO: Have the buttons redirect users to my github and resume
+// TODO: Find a better pfp 

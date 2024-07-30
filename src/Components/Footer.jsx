@@ -39,3 +39,5 @@ const Footer = () => {
 }
 
 export default Footer;
+
+// TODO: create actual icons+links for the 4 5 6 placeholders
