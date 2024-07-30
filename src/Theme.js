@@ -23,9 +23,22 @@ export const theme = createTheme({
     fontFamily: ["Michroma", "sans-serif"].join(', '),
     allVariants: {
       color: "#1A1A1A"
-    }
+    },
     // subtitle: "MuseoModerno", 400
     // title: "Montserrat", 800
+
+    h1: {
+      fontFamily: ["Montserrat", "Michroma", "sans-serif"].join(', '),
+      fontWeight: 800,
+    },
+    h3: {
+      fontFamily: ["Montserrat", "Michroma", "sans-serif"].join(', '),
+      fontWeight: 800,
+    },
+    h4: {
+      fontFamily: ["MuseoModerno", "Montserrat", "Michroma", "sans-serif"].join(', '),
+      fontWeight: 400,
+    }
   },
 
   components: {

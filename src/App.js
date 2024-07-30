@@ -4,6 +4,7 @@ import './App.css';
 import { ThemeProvider } from '@emotion/react';
 import { CssBaseline } from '@mui/material';
 import { theme } from './Theme';
+import Home from './Pages/Home';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <CssBaseline />
         <Routes>
           <Route path='/' element={<Outline />} >
-            <Route index element={<div>home</div>} />
+            <Route index element={<Home />} />
             <Route path='skills' element={<div>skills</div>} />
             <Route path='projects' element={<div>projects</div>} />
             <Route path='art' element={<div>art</div>} />

@@ -11,7 +11,7 @@ const Outline = () => {
         <Navbar />
       </nav>
       <Box component="main">
-        <Container>
+        <Container sx={{my: 2}}>
           <Outlet />
         </Container>
       </Box>
