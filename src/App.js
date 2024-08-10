@@ -1,5 +1,3 @@
-import { Route, Routes } from 'react-router-dom';
-import Outline from './Outline';
 import './App.css';
 import { ThemeProvider } from '@emotion/react';
 import { CssBaseline, Box, Container } from '@mui/material';
@@ -14,15 +12,6 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        {/* <Routes>
-          <Route path='/' element={<Outline />} >
-            <Route index element={<Home />} />
-            <Route path='skills' element={<Skills />} />
-            <Route path='projects' element={<div>projects</div>} />
-            <Route path='art' element={<div>art</div>} />
-            <Route path='contact' element={<div>contact</div>} />
-          </Route>
-        </Routes> */}
         <div style={{
           marginBottom: `${theme.mixins.toolbar.minHeight}px`
         }}>
