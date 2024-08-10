@@ -1,11 +1,10 @@
-import { Box, Grid } from "@mui/material";
-import { Fragment, useEffect, useState } from "react";
-
-import bgDecoration from '../Images/bg_decor.svg';
+import { Box, Grid, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 
 import Skillbar from "../Components/Skillbar";
 
 import PocketBase from 'pocketbase';
+import { theme } from "../Theme";
 
 const Skills = () => {
   const [skills, setSkills] = useState([]);
@@ -24,19 +23,9 @@ const Skills = () => {
   }, []);
 
   return (
-    <Fragment>
-      {/* <img
-            src={bgDecoration} 
-            alt=""
-            style={{
-            }}/> */}
-      <Box
-        sx={{
-          background: `url(${bgDecoration})`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'round'
-        }}
-      >
+    <Box component='section' id="Skills">
+      <Typography variant="h4" textTransform='capitalize' textAlign='center' my={3}>Skills</Typography>
+      <Box p={5} border={`${theme.palette.primary.main} 0.25rem solid`}>
         <Grid container mb={4} spacing={6}>
           {
             skills.map(skill => (
@@ -47,7 +36,7 @@ const Skills = () => {
           }
         </Grid>
       </Box>
-    </Fragment>
+    </Box>
   );
 }
 

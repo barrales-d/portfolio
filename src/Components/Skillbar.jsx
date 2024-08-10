@@ -13,7 +13,7 @@ const Skillbar = ({ data }) => {
           variant="determinate"
           value={data.Percentage}
           sx={{
-            height: 12,
+            height: '1rem',
             borderRadius: 5,
             [`& .${linearProgressClasses.bar}`]: {
               borderRadius: 5,

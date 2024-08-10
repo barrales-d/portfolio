@@ -51,6 +51,14 @@ export const theme = createTheme({
       },
       defaultProps: {
       }
+    },
+    MuiLinearProgress: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          background: 'transparent',
+          border: `${theme.palette.primary.main} 2px solid`
+        })
+      }
     }
   }
 });

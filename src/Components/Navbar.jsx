@@ -3,7 +3,9 @@ import { Box, Button, AppBar, Divider, Drawer, List, ListItem, ListItemButton, L
 import { Fragment, useState } from 'react';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Link } from 'react-router-dom';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+// import { Link } from 'react-router-dom';
+
 
 const drawerWidth = 240;
 const navItems = ['Home', 'Skills', 'Projects', 'Art', 'Contact'];
@@ -37,13 +39,14 @@ const Navbar = ({ window }) => {
               backgroundColor: `${theme.palette.primary.light}`,
             }
           }}>
-            <Link to={(item === 'Home' ? '/' : item)} style={{ all: 'inherit'}}>
+            <AnchorLink offset='100' href={`#${item}`} style={{ all: 'inherit' }}>
+              {/* <Link to={(item === 'Home' ? '/' : item)} style={{ all: 'inherit'}}> */}
               <ListItemButton
                 onClick={() => { toggleActiveBtn(idx) }}
                 sx={{ textAlign: 'center' }}>
                 <ListItemText primary={item} />
               </ListItemButton>
-            </Link>
+            </AnchorLink>
           </ListItem>
         ))}
       </List>
@@ -54,7 +57,7 @@ const Navbar = ({ window }) => {
 
   return (
     <Fragment>
-      <AppBar position='sticky'>
+      <AppBar position='fixed'>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -69,7 +72,7 @@ const Navbar = ({ window }) => {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}></Box>
           <Box sx={{ display: { xs: 'none', sm: 'block' }, gap: '8px' }}>
             {navItems.map((item, idx) => (
-              <Link to={(item === 'Home' ? '/' : item)} key={item}>
+              <AnchorLink offset='100' href={`#${item}`} key={item}>
                 <Button
                   onClick={() => toggleActiveBtn(idx)}
                   sx={{
@@ -89,7 +92,7 @@ const Navbar = ({ window }) => {
                   }}>
                   {item}
                 </Button>
-              </Link>
+              </AnchorLink>
             ))}
           </Box>
         </Toolbar>

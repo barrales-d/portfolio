@@ -7,13 +7,15 @@ const Home = () => {
   return (
     <Fragment>
       <Grid container
+        component='section'
+        id="Home"
         display='grid'
         gap='5rem'
         alignItems='center'
         justifyContent='center'
         justifyItems='center'
         sx={{
-          gridTemplate: { xs: 'auto auto / auto', md: 'auto / 1fr auto' }
+          gridTemplate: { xs: 'auto auto / auto', md: 'auto / 1fr auto' },
         }}
       >
         <Grid item>
@@ -22,9 +24,8 @@ const Home = () => {
             Im, Diego <span style={{ color: theme.palette.primary.main }}>Barrales</span>
           </Typography>
           <Typography variant="body2" my={1} textAlign="justify">
-            I am a passionate Mexican American who loves to program.
-            I enjoy coding in C++, Python, and Javascript to develop
-            simple and complex projects
+            A passionate Mexican American who loves to program.
+            I enjoy coding in C++, Python, and Javascript.
           </Typography>
           <Box display='flex' gap='1rem'>
             <Button variant="outlined">
@@ -41,7 +42,7 @@ const Home = () => {
             alt="Diego Barrales Profile Image"
             src={pfp}
             sx={{
-              maxWidth: {xs: '80vw', md: '530px'}
+              maxWidth: { xs: '80vw', md: '530px' }
             }}
           />
         </Grid>
