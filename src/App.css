@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:ital,wght@0,800;1,800&family=MuseoModerno:ital@0;1&display=swap');
 .App {
-    background: radial-gradient(farthest-corner at 0% 0%, #FFCFA1 0%, #FCE6D1 55%, white 100%);
+    /* background: radial-gradient(farthest-corner at 0% 0%, #FFCFA1 0%, #FCE6D1 55%, white 100%); */
+    background: transparent;
     display: grid;
     min-height: 100svh;
     grid-template-rows: auto 1fr auto;

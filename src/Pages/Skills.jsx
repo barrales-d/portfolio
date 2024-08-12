@@ -6,7 +6,7 @@ import Skillbar from "../Components/Skillbar";
 import PocketBase from 'pocketbase';
 import { theme } from "../Theme";
 
-const Skills = () => {
+const Skills = ({animation}) => {
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Skills = () => {
   }, []);
 
   return (
-    <Box component='section' id="Skills">
+    <Box component='section' id="Skills" data-aos={animation}>
       <Typography variant="h4" textTransform='capitalize' textAlign='center' my={3}>Skills</Typography>
       <Box p={5} border={`${theme.palette.primary.main} 0.25rem solid`}>
         <Grid container mb={4} spacing={6}>

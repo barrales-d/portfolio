@@ -1,36 +1,46 @@
 import './App.css';
 import { ThemeProvider } from '@emotion/react';
-import { CssBaseline, Box, Container } from '@mui/material';
+import { CssBaseline, Box, Container, duration } from '@mui/material';
 import { theme } from './Theme';
-import Navbar  from './Components/Navbar';
-import Footer  from './Components/Footer';
+import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
 import Home from './Pages/Home';
 import Skills from './Pages/Skills';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { Fragment, useEffect } from 'react';
+import AnimatedBackground from './Components/AnimatedBackground';
+
 function App() {
+  useEffect(() => { AOS.init({ duration: 2000, once: true }); }, []);
+
   return (
-    <div className="App">
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <div style={{
-          marginBottom: `${theme.mixins.toolbar.minHeight}px`
-        }}>
-          <Navbar />
-        </div>
-        <Box component="main">
-          <Container sx={{ my: 2 }}>
-            <Home />
-            <Skills />
-            <div>projects</div>
-            <div>art</div>
-            <div>contact</div>
-          </Container>
-        </Box>
-        <footer>
-          <Footer />
-        </footer>
-      </ThemeProvider>
-    </div >
+    <Fragment>
+      <AnimatedBackground />
+      <div className="App">
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <div style={{
+            marginBottom: `${theme.mixins.toolbar.minHeight}px`
+          }}>
+            <Navbar />
+          </div>
+          <Box component="main">
+            <Container sx={{ my: 2 }}>
+              <Home />
+              <Skills animation='zoom-in' />
+              <div>projects</div>
+              <div>art</div>
+              <div>contact</div>
+            </Container>
+          </Box>
+          <footer>
+            <Footer />
+          </footer>
+        </ThemeProvider>
+      </div>
+    </Fragment>
   );
 }
 

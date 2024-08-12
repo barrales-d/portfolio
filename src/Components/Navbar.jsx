@@ -4,8 +4,6 @@ import { Fragment, useState } from 'react';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-// import { Link } from 'react-router-dom';
-
 
 const drawerWidth = 240;
 const navItems = ['Home', 'Skills', 'Projects', 'Art', 'Contact'];
@@ -77,14 +75,14 @@ const Navbar = ({ window }) => {
                   onClick={() => toggleActiveBtn(idx)}
                   sx={{
                     color: ((activeBtn === idx) ?
-                      `${theme.palette.primary.main}`
+                      `${theme.palette.secondary.main}`
                       : `${theme.palette.text.primary}`),
                     textTransform: "none",
                     borderBottomLeftRadius: '0',
                     WebkitBorderBottomRightRadius: '0',
-                    borderBottom: ((activeBtn === idx) ? `1px solid ${theme.palette.primary.main}` : 'none'),
+                    borderBottom: ((activeBtn === idx) ? `1px solid ${theme.palette.secondary.main}` : 'none'),
                     "&:hover": {
-                      color: `${theme.palette.primary.main}`,
+                      color: `${theme.palette.secondary.main}`,
                       ':active': {
                         backgroundColor: `${theme.palette.primary.light}`
                       },
