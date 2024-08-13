@@ -75,14 +75,14 @@ const Navbar = ({ window }) => {
                   onClick={() => toggleActiveBtn(idx)}
                   sx={{
                     color: ((activeBtn === idx) ?
-                      `${theme.palette.secondary.main}`
+                      `${theme.palette.primary.main}`
                       : `${theme.palette.text.primary}`),
                     textTransform: "none",
                     borderBottomLeftRadius: '0',
                     WebkitBorderBottomRightRadius: '0',
-                    borderBottom: ((activeBtn === idx) ? `1px solid ${theme.palette.secondary.main}` : 'none'),
+                    borderBottom: ((activeBtn === idx) ? `1px solid ${theme.palette.primary.main}` : 'none'),
                     "&:hover": {
-                      color: `${theme.palette.secondary.main}`,
+                      color: `${theme.palette.primary.main}`,
                       ':active': {
                         backgroundColor: `${theme.palette.primary.light}`
                       },

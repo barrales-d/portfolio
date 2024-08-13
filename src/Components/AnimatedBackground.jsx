@@ -20,7 +20,6 @@ const AnimatedBackground = () => {
   const options = useMemo(() => ({
     background: {
       color: {
-        // value: "#0d47a1",
         value: `${theme.palette.secondary.light}`
       },
     },
@@ -41,8 +40,8 @@ const AnimatedBackground = () => {
           quantity: 4,
         },
         repulse: {
-          distance: 200,
-          duration: 0.4,
+          distance: 100,
+          duration: 1.0,
         },
       },
     },
@@ -71,16 +70,16 @@ const AnimatedBackground = () => {
         density: {
           enable: true,
         },
-        value: 80,
+        value: 100,
       },
       opacity: {
-        value: 0.5,
+        value: 0.3,
       },
       shape: {
         type: "circle",
       },
       size: {
-        value: { min: 1, max: 5 },
+        value: { min: 1, max: 25 },
       },
     },
     detectRetina: true,
@@ -88,9 +87,9 @@ const AnimatedBackground = () => {
 
   if (isInitialized) {
     return (
-      <Box 
-      position='absolute'
-      zIndex='-1'>
+      <Box
+        position='absolute'
+        zIndex='-1'>
         <Particles
           id="tsparticles"
           options={options}
