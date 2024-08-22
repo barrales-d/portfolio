@@ -1,55 +1,51 @@
-import { Box, Grid, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
+import { Grid } from "@mui/material";
+import { useMemo } from "react";
 
 import Skillbar from "../Components/Skillbar";
 import Wrapper from "../Components/Wrapper";
 
-import PocketBase from 'pocketbase';
-import { theme } from "../Theme";
-
 const Skills = ({ animation }) => {
-  const [skills, setSkills] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      if (skills.length == 0) {
-        // const pb = new PocketBase('https://diego-dev-3240.fly.dev');
-
-        // await pb.admins.authWithPassword(process.env.REACT_APP_PB_EMAIL, process.env.REACT_APP_PB_PASSWORD);
-
-        // const records = await pb.collection('skills').getFullList({
-        //   sort: '-created',
-        // });
-        // setSkills(records);
-        setSkills([
-          {
-            Title: 'this',
-            Percentage: 20
-          },
-          {
-            Title: 'is',
-            Percentage: 20
-          },
-          {
-            Title: 'test',
-            Percentage: 20
-          },
-          {
-            Title: 'data',
-            Percentage: 20
-          },
-
-        ]);
+  const skills = useMemo(() => {
+    let iota = 0;
+    function updateIota() {
+      const current = iota;
+      iota += 1;
+      return current;
+    }
+    return [
+      {
+        ID: updateIota(),
+        Title: 'C++',
+        Percentage: 85
+      },
+      {
+        ID: updateIota(),
+        Title: 'Javascript',
+        Percentage: 83
+      },
+      {
+        ID: updateIota(),
+        Title: 'HTML / CSS',
+        Percentage: 94
+      },
+      {
+        ID: updateIota(),
+        Title: 'Python',
+        Percentage: 68
+      },
+      {
+        ID: updateIota(),
+        Title: 'Problem Solving',
+        Percentage: 92
       }
-    })();
+    ]
   }, []);
-
   return (
     <Wrapper title='Skills' animation={animation}>
       <Grid container mb={4} spacing={6}>
         {
           skills.map(skill => (
-            <Grid item key={skill.Title + '-' + skill.id} xs={12} md={6}>
+            <Grid item key={skill.Title + '-' + skill.ID} xs={12} md={6}>
               <Skillbar data={skill}> </Skillbar>
             </Grid>
           ))

@@ -1,6 +1,6 @@
 import './App.css';
 import { ThemeProvider } from '@emotion/react';
-import { CssBaseline, Box, Container, duration } from '@mui/material';
+import { CssBaseline, Box, Container } from '@mui/material';
 import { theme } from './Theme';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
@@ -32,7 +32,7 @@ function App() {
           <Box component="main">
             <Container sx={{ my: 2 }}>
               <Home />
-              <Skills animation='fase-up' />
+              <Skills animation='fade-up' />
               <Projects animation='fade-up' />
               <Art animation='fade-up' />
               <Contact animation='fade-up' />

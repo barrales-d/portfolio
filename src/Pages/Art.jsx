@@ -4,8 +4,8 @@ import Wrapper from "../Components/Wrapper";
 const Art = ({ animation }) => {
   return (
     <Wrapper title='Art' animation={animation}>
-      <Typography variant="h2">
-        hii
+      <Typography variant="h4">
+        Coming Soon<span className="loader"></span>
       </Typography>
     </Wrapper>
   );
