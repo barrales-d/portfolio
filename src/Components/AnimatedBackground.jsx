@@ -4,8 +4,28 @@ import { loadSlim } from "@tsparticles/slim";
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { theme } from "../Theme";
 
+const useMobile = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowSizeChange);
+    return () => {
+      window.removeEventListener('resize', handleWindowSizeChange);
+    }
+  }, []);
+
+  const isMobile = width <= 768;
+  console.log(isMobile);
+  return [isMobile];
+};
+
 const AnimatedBackground = () => {
   const [isInitialized, setIsInitialized] = useState(false);
+
+  const [isMobile] = useMobile();
 
   useEffect(() => {
     if (!isInitialized) {
@@ -15,7 +35,7 @@ const AnimatedBackground = () => {
         setIsInitialized(true);
       });
     }
-  }, []);
+  }, [isInitialized]);
 
   const options = useMemo(() => ({
     background: {
@@ -26,22 +46,26 @@ const AnimatedBackground = () => {
     fpsLimit: 120,
     interactivity: {
       events: {
-        onClick: {
-          enable: true,
-          mode: "push",
-        },
         onHover: {
           enable: true,
-          mode: "repulse",
+          mode: "attract",
         },
       },
       modes: {
         push: {
-          quantity: 4,
+          quantity: 6,
         },
         repulse: {
           distance: 100,
-          duration: 1.0,
+          duration: 10.0,
+        },
+        attract: {
+          distance: 200,
+          duration: 1,
+          easing: "ease-in-out",
+          factor: 10,
+          maxSpeed: 25,
+          speed: 1
         },
       },
     },
@@ -51,10 +75,10 @@ const AnimatedBackground = () => {
       },
       links: {
         color: "#ffffff",
-        distance: 150,
+        distance: 200,
         enable: true,
         opacity: 0.5,
-        width: 1,
+        width: 1.5,
       },
       move: {
         direction: "none",
@@ -68,7 +92,7 @@ const AnimatedBackground = () => {
       },
       number: {
         density: {
-          enable: true,
+          enable: isMobile,
         },
         value: 100,
       },
@@ -76,14 +100,25 @@ const AnimatedBackground = () => {
         value: 0.3,
       },
       shape: {
-        type: "circle",
+        close: true,
+        fill: true,
+        options: {
+          polygon: {
+            sides: 6
+          },
+          star: {
+            sides: 6,
+            inset: 1.5
+          }
+        },
+        type: ["polygon", "star"],
       },
       size: {
-        value: { min: 1, max: 25 },
+        value: { min: 1, max: 35 },
       },
     },
     detectRetina: true,
-  }), []);
+  }), [isMobile]);
 
   if (isInitialized) {
     return (
