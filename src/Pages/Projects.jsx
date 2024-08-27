@@ -1,17 +1,17 @@
 import { Typography } from "@mui/material";
 import Wrapper from "../Components/Wrapper";
-import { useMemo } from "react";
+// import { useMemo } from "react";
 
 import '../App.css';
 
 const Projects = ({ animation }) => {
-  const projects = useMemo(() => {
-    return [
-      {
+  // const projects = useMemo(() => {
+  //   return [
+  //     {
 
-      }
-    ];
-  }, []);
+  //     }
+  //   ];
+  // }, []);
   return (
     <Wrapper title='Projects' animation={animation}>
       <Typography variant="h4">
