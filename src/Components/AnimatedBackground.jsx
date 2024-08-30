@@ -18,7 +18,6 @@ const useMobile = () => {
   }, []);
 
   const isMobile = width <= 768;
-  console.log(isMobile);
   return [isMobile];
 };
 
