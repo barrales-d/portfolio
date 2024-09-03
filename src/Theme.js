@@ -62,6 +62,14 @@ export const theme = createTheme({
           border: `${theme.palette.primary.main} 2px solid`
         })
       }
-    }
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          background: theme.palette.primary.light,
+
+        })
+      }
+    },
   }
 });

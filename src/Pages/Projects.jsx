@@ -27,7 +27,7 @@ const Projects = ({ animation }) => {
       {
         ID: updateIota(),
         Title: '',
-        Description: '',
+        Description: 'Basic Longer Description it be like that I swear I am almost done with making this project card this should be the last thing I need to do before I can say this is completed',
         Image: '',
         Link: {
           to: '',
@@ -62,7 +62,7 @@ const Projects = ({ animation }) => {
         {
           projects.map(project => (
             <Grid item key={project.Title + '-' + project.ID} xs={12} sm={6} md={3}>
-              <ProjectCard data={project}/>
+              <ProjectCard data={project} />
             </Grid>
           ))
         }
