@@ -1,4 +1,4 @@
-import { Card, CardActionArea, CardActions, CardContent, IconButton, Link, Typography } from "@mui/material";
+import { Button, Card, CardActions, CardContent, IconButton, Link, Typography } from "@mui/material";
 import { Fragment, useState } from "react";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
@@ -16,23 +16,21 @@ const ProjectCard = ({ data }) => {
 
   return (
     <Card sx={{ maxWidth: cardWidth }}>
-      <CardActionArea>
-        <Media image={data.Image} cardWidth={cardWidth} />
-        <CardContent sx={{ position: "relative" }}>
-          <img src={cardDecor} style={{
-            position: 'absolute',
-            top: 5,
-            right: 5,
-            opacity: 0.2
-          }} />
-          <Typography gutterBottom variant="h4">
-            {data.Title}
-          </Typography>
-          <Typography variant="body2" noWrap={!isExpanded}>
-            {data.Description}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+      <Media image={data.Image} cardWidth={cardWidth} />
+      <CardContent sx={{ position: "relative" }}>
+        <img src={cardDecor} style={{
+          position: 'absolute',
+          top: 5,
+          right: 5,
+          opacity: 0.2
+        }} alt="card decorative element" />
+        <Typography gutterBottom variant="h6">
+          {data.Title}
+        </Typography>
+        <Typography variant="body2" noWrap={!isExpanded}>
+          {data.Description}
+        </Typography>
+      </CardContent>
       <CardActions sx={{
         display: 'flex',
         justifyContent: (data.Description.length >= 20) ? 'space-between' : 'flex-end'
@@ -43,9 +41,9 @@ const ProjectCard = ({ data }) => {
               <IconButton onClick={toggleExpanded}>
                 {
                   (isExpanded) ? (
-                    <ExpandLessIcon fontSize="medium" color="primary" />
+                    <ExpandLessIcon fontSize="small" color="primary" />
                   ) : (
-                    <ExpandMoreIcon fontSize="medium" color="primary" />
+                    <ExpandMoreIcon fontSize="small" color="primary" />
                   )
                 }
               </IconButton>
@@ -53,12 +51,14 @@ const ProjectCard = ({ data }) => {
               <Fragment></Fragment>
             )
         }
-        <Link href={data.Link.url} underline="hover">
+        <Button variant="outlined" size="small" fullWidth>
+        <Link href={data.Link.url}>
           {
             (data.Link.to === 'github') ?
               'Github' : 'View Project'
           }
         </Link>
+        </Button>
       </CardActions>
     </Card >
   );

@@ -16,52 +16,42 @@ const Projects = ({ animation }) => {
     return [
       {
         ID: updateIota(),
-        Title: 'Basic Title',
-        Description: 'Basic Description',
-        Image: 'pfp.png',
+        Title: 'Astro',
+        Description: 'Asteroid Clone',
+        Image: 'astro.png',
         Link: {
           to: 'github',
-          url: 'https://github.com/barrales-d',
+          url: 'https://github.com/barrales-d/Astro',
         }
       },
       {
         ID: updateIota(),
-        Title: '',
-        Description: 'Basic Longer Description it be like that I swear I am almost done with making this project card this should be the last thing I need to do before I can say this is completed',
-        Image: '',
+        Title: 'Console Graphics',
+        Description: 'Mini 2D graphics library in C++ for the console / terminal. Create Rectangles and Squares, Circles and Ellipses, Lines, Triangles with 1 color or interpolate with 3 colors using barycentric coordinates! and most recently Text rendering using a Pico-8 style font',
+        Image: 'console.svg',
         Link: {
-          to: '',
-          url: '',
+          to: 'website',
+          url: 'https://barrales-d.github.io/ConsoleGraphics/',
         }
       },
-      {
-        ID: updateIota(),
-        Title: '',
-        Description: '',
-        Image: '',
-        Link: {
-          to: '',
-          url: '',
-        }
-      },
-      {
-        ID: updateIota(),
-        Title: '',
-        Description: '',
-        Image: '',
-        Link: {
-          to: '',
-          url: '',
-        }
-      }
+      // {
+      //   ID: updateIota(),
+      //   Title: '',
+      //   Description: '',
+      //   Image: '',
+      //   Link: {
+      //     to: '',
+      //     url: '',
+      //   }
+      // }
     ];
   }, []);
   return (
     <Wrapper title='Projects' animation={animation}>
-      <Grid container mb={4} spacing={6}>
+      <Grid container justifyContent='center' spacing={5}>
         {
           projects.map(project => (
-            <Grid item key={project.Title + '-' + project.ID} xs={12} sm={6} md={3}>
+            <Grid item key={'project-' + project.ID} xs={12} sm={6} md={3}>
               <ProjectCard data={project} />
             </Grid>
           ))

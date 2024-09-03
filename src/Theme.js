@@ -41,6 +41,10 @@ export const theme = createTheme({
     h4: {
       fontFamily: ["MuseoModerno", "Montserrat", "Michroma", "sans-serif"].join(', '),
       fontWeight: 400,
+    },
+    h6: {
+      fontFamily: ["MuseoModerno", "Montserrat", "Michroma", "sans-serif"].join(', '),
+      fontWeight: 400,
     }
   },
 
@@ -67,7 +71,7 @@ export const theme = createTheme({
       styleOverrides: {
         root: ({ theme }) => ({
           background: theme.palette.primary.light,
-
+          borderRadius: '1rem'
         })
       }
     },
