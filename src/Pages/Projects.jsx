@@ -34,6 +34,26 @@ const Projects = ({ animation }) => {
           url: 'https://barrales-d.github.io/ConsoleGraphics/',
         }
       },
+      {
+        ID: updateIota(),
+        Title: 'Qubic',
+        Description: '3D tic-tac-toe game in Pygame with AI bot to play against',
+        Image: '',
+        Link: {
+          to: 'github',
+          url: 'https://github.com/barrales-d/Qubic',
+        }
+      },
+      {
+        ID: updateIota(),
+        Title: 'iTravel App',
+        Description: 'This project attempted to create an application helps travelers be stress-free, allowing travelers to focus more on enjoying their experience, rather than being stressed out over fight information, and allowed travelers to have all of their information in one application. I learned about databases and APIs while learning Swift.',
+        Image: 'airplane.png',
+        Link: {
+          to: 'github',
+          url: 'https://github.com/barrales-d/iTravel-Application',
+        }
+      },
       // {
       //   ID: updateIota(),
       //   Title: '',
