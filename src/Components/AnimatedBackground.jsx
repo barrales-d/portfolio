@@ -3,23 +3,7 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { theme } from "../Theme";
-
-const useMobile = () => {
-  const [width, setWidth] = useState(window.innerWidth);
-
-  function handleWindowSizeChange() {
-    setWidth(window.innerWidth);
-  }
-  useEffect(() => {
-    window.addEventListener('resize', handleWindowSizeChange);
-    return () => {
-      window.removeEventListener('resize', handleWindowSizeChange);
-    }
-  }, []);
-
-  const isMobile = width <= 768;
-  return [isMobile];
-};
+import { useMobile } from "../Hooks/useMobile";
 
 const AnimatedBackground = () => {
   const [isInitialized, setIsInitialized] = useState(false);

@@ -54,6 +54,16 @@ const Projects = ({ animation }) => {
           url: 'https://github.com/barrales-d/iTravel-Application',
         }
       },
+      {
+        ID: updateIota(),
+        Title: 'Lexical Analyzer',
+        Description: 'I created a parser to collect all tokens of C code by using the file system’s input and output. In addition, I developed an Arena utility system to manage memory allocation and deallocation',
+        Image: '',
+        Link: {
+          to: 'github',
+          url: 'https://github.com/barrales-d/LexicalAnalyzer',
+        }
+      },
       // {
       //   ID: updateIota(),
       //   Title: '',
@@ -68,7 +78,7 @@ const Projects = ({ animation }) => {
   }, []);
   return (
     <Wrapper title='Projects' animation={animation}>
-      <Grid container justifyContent='center' spacing={5}>
+      <Grid container spacing={5}>
         {
           projects.map(project => (
             <Grid item key={'project-' + project.ID} xs={12} sm={6} md={3}>

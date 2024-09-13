@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material';
+import { alpha, createTheme } from '@mui/material';
 
 import './App.css';
 
@@ -75,5 +75,12 @@ export const theme = createTheme({
         })
       }
     },
+    MuiTextField: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          background: alpha(theme.palette.common.white, 0.4),
+        }),
+      }
+    }
   }
 });
