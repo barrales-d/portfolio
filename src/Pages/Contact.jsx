@@ -18,18 +18,21 @@ const Contact = ({ animation }) => {
           component='form'
           method="POST"
           data-netlify="true"
+          name="contact"
           fullWidth >
 
           <TextField
             id="name"
             label="Name"
             margin="dense"
+            name="name"
             required />
 
           <TextField
             id="email"
             label="Email"
             margin="dense"
+            name="email"
             required
             type="email" />
 
@@ -37,6 +40,7 @@ const Contact = ({ animation }) => {
             id="message"
             label="Message"
             margin="dense"
+            name="message"
             multiline
             rows={5} />
 
