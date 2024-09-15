@@ -9,7 +9,7 @@ const Contact = ({ animation }) => {
   return (
     <Wrapper title='Contact' animation={animation}>
       <Container maxWidth={isMobile ? 'lg' : 'sm'} sx={{
-        padding: (isMobile ? '2rem': '3rem'),
+        padding: (isMobile ? '2rem' : '3rem'),
         backgroundColor: `${theme.palette.primary.light}`,
         borderRadius: '0.25rem 4rem 0.25rem 4rem',
       }}>
@@ -20,6 +20,8 @@ const Contact = ({ animation }) => {
           data-netlify="true"
           name="contact"
           fullWidth >
+
+          <input type="hidden" name="form-name" value='contact' />
 
           <TextField
             id="name"
