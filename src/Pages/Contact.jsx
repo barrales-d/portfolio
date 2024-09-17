@@ -3,6 +3,8 @@ import Wrapper from "../Components/Wrapper";
 import { theme } from "../Theme";
 import { useMobile } from "../Hooks/useMobile";
 
+import SendIcon from '@mui/icons-material/SendRounded';
+
 const Contact = ({ animation }) => {
   const [isMobile] = useMobile();
 
@@ -49,10 +51,11 @@ const Contact = ({ animation }) => {
           <Button
             variant="contained"
             type="submit"
+            endIcon={ <SendIcon /> }
             sx={{
               mt: 3
             }}>
-            Submit!
+            Send
           </Button>
 
         </FormControl>

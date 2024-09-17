@@ -5,6 +5,18 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
+const SimpleIcon = ({ code }) => {
+    return (
+        <span style={{
+            font: 'icon',
+            fontSize: '1.2rem',
+            fontWeight: 'bold',
+        }}>
+            {code}
+        </span>
+
+    );
+}
 
 const Footer = () => {
     return (
@@ -26,10 +38,10 @@ const Footer = () => {
                         Do not hesitate to contact me to discuss possible work or learn more about my work.
                     </Typography>
                     <Typography variant="body2">
-                        &copy; {new Date().getFullYear()} created by Diego Barrales
+                        <SimpleIcon code='&copy;' /> {new Date().getFullYear()} created by Diego Barrales
                     </Typography>
                     <Typography variant="body2">
-                        dbarrales06@gmail.com
+                        <SimpleIcon code='&#64;' /> dbarrales06@gmail.com
                     </Typography>
                     <Grid container maxWidth='max-content' gap='4px'>
                         <Grid item>
