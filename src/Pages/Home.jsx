@@ -28,7 +28,7 @@ const Home = () => {
             I enjoy coding in C++, Python, and Javascript.
           </Typography>
           <Box display='flex' gap='1rem'>
-            <Button variant="outlined">
+            <Button variant="outlined" href="https://github.com/barrales-d" target="_blank" rel="noopener">
               Github
             </Button>
             <Button variant="contained">
@@ -53,5 +53,4 @@ const Home = () => {
 
 export default Home;
 
-// TODO: Have the buttons redirect users to my github and resume
-// TODO: Find a better pfp 
+// TODO: Have the buttons redirect users to resume

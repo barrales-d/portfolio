@@ -12,7 +12,6 @@ import 'aos/dist/aos.css';
 import { Fragment, useEffect } from 'react';
 import AnimatedBackground from './Components/AnimatedBackground';
 import Projects from './Pages/Projects';
-import Art from './Pages/Art';
 import Contact from './Pages/Contact';
 
 function App() {
@@ -34,7 +33,6 @@ function App() {
               <Home />
               <Skills animation='fade-up' />
               <Projects animation='fade-up' />
-              <Art animation='fade-up' />
               <Contact animation='fade-up' />
             </Container>
           </Box>

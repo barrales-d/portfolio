@@ -1,5 +1,9 @@
-import { Box, Grid, Paper, Typography } from "@mui/material";
+import { Box, Grid, IconButton, Paper, Typography } from "@mui/material";
 import { Fragment } from "react";
+
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 
 const Footer = () => {
@@ -13,12 +17,12 @@ const Footer = () => {
             }} square variant="outlined">
                 <Box sx={{
                     display: 'flex',
-                    flexDirection: {xs:'column', md:'row'},
-                    gap: {xs:'16px', md:'8px'},
+                    flexDirection: { xs: 'column', md: 'row' },
+                    gap: { xs: '16px', md: '8px' },
                     justifyContent: 'space-around',
                     alignItems: 'center',
                 }}>
-                    <Typography variant="body2" maxWidth={'320px'}>
+                    <Typography variant="body2" maxWidth='320px'>
                         Do not hesitate to contact me to discuss possible work or learn more about my work.
                     </Typography>
                     <Typography variant="body2">
@@ -27,10 +31,37 @@ const Footer = () => {
                     <Typography variant="body2">
                         dbarrales06@gmail.com
                     </Typography>
-                    <Grid container maxWidth={'max-content'} gap={'4px'}>
-                        <Grid item>4</Grid>
-                        <Grid item>5</Grid>
-                        <Grid item>6</Grid>
+                    <Grid container maxWidth='max-content' gap='4px'>
+                        <Grid item>
+                            <IconButton
+                                aria-label="View Github"
+                                size="large"
+                                href="https://github.com/barrales-d"
+                                target="_blank"
+                                rel="noopener" >
+                                <GitHubIcon fontSize="inherit" />
+                            </IconButton>
+                        </Grid>
+                        <Grid item>
+                            <IconButton
+                                aria-label="View LinkedIn"
+                                size="large"
+                                href="https://www.linkedin.com/in/diego-barrales-514aa61bb/"
+                                target="_blank"
+                                rel="noopener" >
+                                <LinkedInIcon fontSize="inherit" />
+                            </IconButton>
+                        </Grid>
+                        <Grid item>
+                            <IconButton
+                                aria-label="View Instagram"
+                                size="large"
+                                href="https://www.instagram.com/diegobarrales._/"
+                                target="_blank"
+                                rel="noopener" >
+                                <InstagramIcon fontSize="inherit" />
+                            </IconButton>
+                        </Grid>
                     </Grid>
                 </Box>
             </Paper>
@@ -39,5 +70,3 @@ const Footer = () => {
 }
 
 export default Footer;
-
-// TODO: create actual icons+links for the 4 5 6 placeholders

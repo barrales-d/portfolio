@@ -6,7 +6,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'Skills', 'Projects', 'Art', 'Contact'];
+const navItems = ['Home', 'Skills', 'Projects', 'Contact'];
 
 const Navbar = ({ window }) => {
   const theme = useTheme();
