@@ -92,3 +92,5 @@ const Projects = ({ animation }) => {
 }
 
 export default Projects;
+
+// TODO: Smoothly Animate expanding and retracting cards

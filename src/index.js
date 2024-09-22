@@ -12,3 +12,6 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>
 );
+
+// TODO: bring back pocketbase as a back end
+// TODO: Consider system default theme (dark or light) and render correctly

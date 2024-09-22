@@ -21,7 +21,7 @@ const Home = () => {
         <Grid item>
           <Typography component='h2' variant="h4">Hello, World</Typography>
           <Typography component='h1' variant="h3">
-            Im, Diego <span style={{ color: theme.palette.primary.main }}>Barrales</span>
+            I&#39;m Diego <span style={{ color: theme.palette.primary.main }}>Barrales</span>
           </Typography>
           <Typography variant="body2" my={1} textAlign="justify">
             A passionate Mexican American who loves to program.

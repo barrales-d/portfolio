@@ -1,5 +1,4 @@
-import { CardMedia, Skeleton } from "@mui/material";
-import { Box } from "@mui/system";
+import { Box, CardMedia, Skeleton } from "@mui/material";
 import { Fragment, useMemo, useState } from "react";
 import { theme } from "../Theme";
 
