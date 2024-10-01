@@ -31,7 +31,7 @@ const Home = () => {
             <Button variant="outlined" href="https://github.com/barrales-d" target="_blank" rel="noopener">
               Github
             </Button>
-            <Button variant="contained">
+            <Button variant="contained" href="/DiegoBarralesResume.pdf">
               Resume
             </Button>
           </Box>
@@ -52,5 +52,3 @@ const Home = () => {
 }
 
 export default Home;
-
-// TODO: Have the buttons redirect users to resume
