@@ -21,20 +21,54 @@ const AnimatedBackground = () => {
   }, [isInitialized]);
 
   const options = useMemo(() => ({
+    autoPlay: true,
     background: {
       color: {
         value: `${theme.palette.secondary.light}`
       },
+      position: "50% 50%",
+      repeat: "no-repeat",
+      size: "cover",
+      opacity: 1
     },
+    backgroundMask: {
+      composite: "destination-out",
+      cover: {
+        color: {
+          value: "#fff"
+        },
+        opacity: 1
+      },
+      enable: false
+    },
+    clear: true,
+    defaultThemes: {},
+    delay: 0,
+    fullScreen: {
+      enable: true,
+      zIndex: -10,
+    },
+    detectRetina: true,
+    duration: 0,
     fpsLimit: 120,
     interactivity: {
+      detectsOn: "windows",
       events: {
         onHover: {
           enable: true,
-          mode: "attract",
+          mode: "attract"
         },
+        resize: {
+          delay: 0.5,
+          enable: true
+        }
       },
       modes: {
+        trail: {
+          delay: 1,
+          pauseOnStop: false,
+          quantity: 1
+        },
         push: {
           quantity: 6,
         },
@@ -45,11 +79,24 @@ const AnimatedBackground = () => {
         attract: {
           distance: 200,
           duration: 1,
-          easing: "ease-in-out",
+          easing: "ease-out-quad",
           factor: 10,
           maxSpeed: 25,
           speed: 1
         },
+        light: {
+          area: {
+            gradient: {
+              start: {
+                value: "#ffffffff"
+              },
+              stop: {
+                value: "#000000ff"
+              }
+            },
+            radius: 100
+          }
+        }
       },
     },
     particles: {
@@ -58,29 +105,39 @@ const AnimatedBackground = () => {
       },
       links: {
         color: "#ffffff",
-        distance: 200,
+        distance: 50,
         enable: true,
-        opacity: 0.5,
+        opacity: 0.75,
         width: 1.5,
       },
       move: {
         direction: "none",
         enable: true,
+        size: true,
         outModes: {
-          default: "bounce",
+          default: "destroy",
         },
         random: false,
-        speed: 6,
-        straight: false,
+        speed: 4,
+        straight: true,
+        trail: {
+          enable: true,
+          length: 6,
+          fill: {
+            color: `${theme.palette.secondary.main}`
+          }
+        }
       },
       number: {
         density: {
           enable: isMobile,
+          height: 1920, 
+          width: 1080
         },
         value: 100,
       },
       opacity: {
-        value: 0.3,
+        value: 1,
       },
       shape: {
         close: true,
@@ -88,19 +145,14 @@ const AnimatedBackground = () => {
         options: {
           polygon: {
             sides: 6
-          },
-          star: {
-            sides: 6,
-            inset: 1.5
           }
         },
-        type: ["polygon", "star"],
+        type: "polygon",
       },
       size: {
-        value: { min: 1, max: 35 },
+        value: 1,
       },
     },
-    detectRetina: true,
   }), [isMobile]);
 
   if (isInitialized) {

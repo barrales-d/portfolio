@@ -1,6 +1,5 @@
 import { Button, Container, FormControl, TextField, Typography } from "@mui/material";
 import Wrapper from "../Components/Wrapper";
-import { theme } from "../Theme";
 import { useMobile } from "../Hooks/useMobile";
 
 import SendIcon from '@mui/icons-material/SendRounded';
@@ -11,8 +10,12 @@ const Contact = ({ animation }) => {
   return (
     <Wrapper title='Contact' animation={animation}>
       <Container maxWidth={isMobile ? 'lg' : 'sm'} sx={{
+        background: "rgba(255, 255, 255, 0.11)",
+        boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+        backdropFilter: "blur(5.3px)",
+        WebkitBackdropFilter: "blur(5.3px)",
+        border: "1px solid rgba(255, 255, 255, 0.25)",
         padding: (isMobile ? '2rem' : '3rem'),
-        backgroundColor: `${theme.palette.primary.light}`,
         borderRadius: '0.25rem 4rem 0.25rem 4rem',
       }}>
         <Typography variant="h6" textAlign='center'>Send me a Message!</Typography>
@@ -51,7 +54,7 @@ const Contact = ({ animation }) => {
           <Button
             variant="contained"
             type="submit"
-            endIcon={ <SendIcon /> }
+            endIcon={<SendIcon />}
             sx={{
               mt: 3
             }}>

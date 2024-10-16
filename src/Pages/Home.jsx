@@ -18,7 +18,22 @@ const Home = () => {
           gridTemplate: { xs: 'auto auto / auto', md: 'auto / 1fr auto' },
         }}
       >
-        <Grid item>
+        <Grid item sx={{
+          /* From https://css.glass */
+          // background: rgba(255, 255, 255, 0.11);
+          // border-radius: 16px;
+          // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          // backdrop-filter: blur(5.3px);
+          // -webkit-backdrop-filter: blur(5.3px);
+          // border: 1px solid rgba(255, 255, 255, 0.25);
+          background: "rgba(255, 255, 255, 0.11)",
+          borderRadius: "0.25rem 4rem 0.25rem 4rem",
+          boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+          backdropFilter: "blur(5.3px)",
+          WebkitBackdropFilter: "blur(5.3px)",
+          border: "1px solid rgba(255, 255, 255, 0.25)",
+          padding: "3rem 2rem"
+        }}>
           <Typography component='h2' variant="h4">Hello, World</Typography>
           <Typography component='h1' variant="h3">
             I&#39;m Diego <span style={{ color: theme.palette.primary.main }}>Barrales</span>

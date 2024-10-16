@@ -81,6 +81,13 @@ export const theme = createTheme({
           background: alpha(theme.palette.common.white, 0.4),
         }),
       }
+    },
+    MuiButton: {
+      styleOverrides: {
+        outlined: ({theme}) =>  ({
+          background: theme.palette.primary.dark
+        })
+      }
     }
   }
 });
