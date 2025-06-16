@@ -7,7 +7,7 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import cardDecor from '../Images/card_decor.svg';
 import Media from "./Media";
 
-const cardWidth = 240;
+const cardWidth = 320;
 
 const ProjectCard = ({ data }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -16,7 +16,7 @@ const ProjectCard = ({ data }) => {
 
   return (
     <Card sx={{ maxWidth: cardWidth }}>
-      <Media image={data.Image} cardWidth={cardWidth} />
+      <Media image={data.image} />
       <CardContent sx={{ position: "relative" }}>
         <img src={cardDecor} style={{
           position: 'absolute',
@@ -24,19 +24,19 @@ const ProjectCard = ({ data }) => {
           right: 5,
           opacity: 0.2
         }} alt="card decorative element" />
-        <Typography gutterBottom variant="h6">
-          {data.Title}
+        <Typography gutterBottom variant="h6" textAlign="center">
+          {data.title}
         </Typography>
         <Typography variant="body2" noWrap={!isExpanded}>
-          {data.Description}
+          {data.description}
         </Typography>
       </CardContent>
       <CardActions sx={{
         display: 'flex',
-        justifyContent: (data.Description.length >= 20) ? 'space-between' : 'flex-end'
+        justifyContent: (data.description.length >= 20) ? 'space-between' : 'flex-end'
       }}>
         {
-          (data.Description.length >= 20) ?
+          (data.description.length >= 20) ?
             (
               <IconButton onClick={toggleExpanded}>
                 {
@@ -51,14 +51,11 @@ const ProjectCard = ({ data }) => {
               <Fragment></Fragment>
             )
         }
-        <Button variant="outlined" size="small" fullWidth>
-        <Link href={data.Link.url}>
-          {
-            (data.Link.to === 'github') ?
-              'Github' : 'View Project'
-          }
-        </Link>
+        <Link href={data.link} target="_blank">
+        <Button variant="outlined">
+          View Project
         </Button>
+        </Link>
       </CardActions>
     </Card >
   );

@@ -1,0 +1,30 @@
+[
+    {
+        "title":"Astro",
+        "description": "Asteroid Clone",
+        "image": "/images/astro.png",
+        "link": "https://github.com/barrales-d/Astro"
+    },
+        {
+        "title": "Console Graphics",
+        "description": "Mini 2D graphics library in C++ for the console / terminal. Create Rectangles and Squares, Circles and Ellipses, Lines, Triangles with 1 color or interpolate with 3 colors using barycentric coordinates! and most recently Text rendering using a Pico-8 style font",
+        "image": "/images/console.svg",
+        "link": "https://barrales-d.github.io/ConsoleGraphics/"
+    },
+        {
+        "title": "Qubic",
+        "description": "3D tic-tac-toe game in Pygame with AI bot to play against",
+        "link": "https://github.com/barrales-d/Qubic"
+    },
+        {
+        "title":"iTravel App",
+        "description": "This project attempted to create an application helps travelers be stress-free, allowing travelers to focus more on enjoying their experience, rather than being stressed out over fight information, and allowed travelers to have all of their information in one application. I learned about databases and APIs while learning Swift.",
+        "image": "/images/airplane.png",
+        "link": "https://github.com/barrales-d/iTravel-Application"
+    },
+        {
+        "title": "Lexical Analyzer",
+        "description": "I created a parser to collect all tokens of C code by using the file system’s input and output. In addition, I developed an Arena utility system to manage memory allocation and deallocation",
+        "link": "https://github.com/barrales-d/LexicalAnalyzer"
+    }
+]

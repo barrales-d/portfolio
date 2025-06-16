@@ -1,34 +1,24 @@
-import { Box, CardMedia, Skeleton } from "@mui/material";
-import { Fragment, useMemo, useState } from "react";
+import { Box, CardMedia } from "@mui/material";
+import { Fragment } from "react";
 import { theme } from "../Theme";
 
 
-const imageHeight = 128;
+const imageHeight = 240;
 
-const Media = ({ image, cardWidth }) => {
-  const [projectImage, setProjectImage] = useState(null);
+const Media = ({ image }) => {
 
   function getImageTitle(image) {
-    return image.split(".")[0];
+    return image.split(".")[0].split("/")[2];
   }
-
-  useMemo(() => {
-    if (image) {
-      const actualImage = require(`../Images/${image}`);
-      setProjectImage(actualImage);
-    }
-  }, [image]);
 
   if (image) {
     return (
       <Fragment>
-        {
-          projectImage ? (
-            <CardMedia sx={{ height: imageHeight }} image={projectImage} title={getImageTitle(image)} />
-          ) : (
-            <Skeleton variant="rectangular" height={imageHeight} width={cardWidth} />
-          )
-        }
+        {image && (
+          <CardMedia sx={{ 
+            height: imageHeight,
+           }} image={image} title={getImageTitle(image)} />
+        )}
       </Fragment>
     )
   }
