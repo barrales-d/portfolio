@@ -1,93 +1,91 @@
-import { alpha, createTheme } from '@mui/material';
+import { alpha, createTheme } from "@mui/material";
 
-import './App.css';
-
-// const TINY_GAP = '0.25rem';
-// const SMALL_GAP = '0.5rem';
-// const MEDIUM_GAP = '1rem';
-// const LARGE_GAP = '1.5rem';
-
+import "./App.css";
 
 export const theme = createTheme({
   palette: {
     primary: {
-      main: '#0AC4A2',
-      light: "#CFFCF4",
-      dark: "#056150",
+      main: "#5df4ef",
     },
     secondary: {
-      main: '#F4A261',
+      main: "#181161",
     },
     text: {
-      primary: "#1A1A1A",
-    }
+      primary: "#fcfcfc",
+    },
   },
   typography: {
-    fontFamily: ["Michroma", "sans-serif"].join(', '),
+    fontFamily: ["Michroma", "sans-serif"].join(", "),
     allVariants: {
-      color: "#1A1A1A"
+      color: "#fcfcfc",
     },
-    // subtitle: "MuseoModerno", 400
-    // title: "Montserrat", 800
-
     h1: {
-      fontFamily: ["Montserrat", "Michroma", "sans-serif"].join(', '),
+      fontFamily: ["Montserrat", "Michroma", "sans-serif"].join(", "),
       fontWeight: 800,
     },
     h3: {
-      fontFamily: ["Montserrat", "Michroma", "sans-serif"].join(', '),
+      fontFamily: ["Montserrat", "Michroma", "sans-serif"].join(", "),
       fontWeight: 800,
     },
     h4: {
-      fontFamily: ["MuseoModerno", "Montserrat", "Michroma", "sans-serif"].join(', '),
+      fontFamily: ["MuseoModerno", "Montserrat", "Michroma", "sans-serif"].join(
+        ", "
+      ),
       fontWeight: 400,
     },
     h6: {
-      fontFamily: ["MuseoModerno", "Montserrat", "Michroma", "sans-serif"].join(', '),
+      fontFamily: ["MuseoModerno", "Montserrat", "Michroma", "sans-serif"].join(
+        ", "
+      ),
       fontWeight: 400,
-    }
+    },
   },
 
   components: {
     MuiToolbar: {
       styleOverrides: {
         root: ({ theme }) => ({
-          background: theme.palette.primary.light,
-          color: theme.palette.text.primary
-        })
+          background: theme.palette.secondary.light,
+        }),
       },
-      defaultProps: {
-      }
+      defaultProps: {},
     },
     MuiLinearProgress: {
       styleOverrides: {
         root: ({ theme }) => ({
-          background: 'transparent',
-          border: `${theme.palette.primary.main} 2px solid`
-        })
-      }
+          background: "transparent",
+          border: `${theme.palette.primary.main} 2px solid`,
+        }),
+      },
     },
     MuiCard: {
       styleOverrides: {
         root: ({ theme }) => ({
-          background: theme.palette.primary.light,
-          borderRadius: '1rem'
-        })
-      }
+          background: theme.palette.secondary.dark,
+          borderRadius: "1rem",
+        }),
+      },
     },
     MuiTextField: {
       styleOverrides: {
         root: ({ theme }) => ({
           background: alpha(theme.palette.common.white, 0.4),
         }),
-      }
+      },
     },
     MuiButton: {
       styleOverrides: {
-        outlined: ({theme}) =>  ({
-          background: theme.palette.primary.dark
-        })
-      }
-    }
-  }
+        contained: ({ theme }) => ({
+          // background: theme.palette.primary.light,
+          borderRadius: "1rem",
+          padding: '0.25rem 1.25rem',
+        }),
+        outlined: ({ theme }) => ({
+          background: theme.palette.secondary.main,
+          borderRadius: "1rem",
+          padding: '0.25rem 1.25rem',
+        }),
+      },
+    },
+  },
 });
