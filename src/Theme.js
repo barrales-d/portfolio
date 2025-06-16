@@ -76,7 +76,6 @@ export const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         contained: ({ theme }) => ({
-          // background: theme.palette.primary.light,
           borderRadius: "1rem",
           padding: '0.25rem 1.25rem',
         }),
