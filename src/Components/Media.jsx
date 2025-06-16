@@ -14,11 +14,13 @@ const Media = ({ image }) => {
   if (image) {
     return (
       <Fragment>
+        <Box sx={{ height: imageHeight, backgroundColor: theme.palette.primary.main }}>
         {image && (
           <CardMedia sx={{ 
             height: imageHeight,
            }} image={image} title={getImageTitle(image)} />
         )}
+        </Box>
       </Fragment>
     )
   }

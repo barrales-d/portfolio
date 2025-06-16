@@ -31,7 +31,7 @@ const Home = () => {
           boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
           backdropFilter: "blur(5.3px)",
           WebkitBackdropFilter: "blur(5.3px)",
-          border: "1px solid rgba(255, 255, 255, 0.25)",
+          border: "2px solid " + theme.palette.secondary.dark,
           padding: "3rem 2rem"
         }}>
           <Typography component='h2' variant="h4">Hello, World</Typography>
@@ -57,9 +57,11 @@ const Home = () => {
             alt="Diego Barrales Profile Image"
             src={pfp}
             sx={{
-              maxWidth: { xs: '80vw', md: '530px' }
+              maxWidth: { xs: '80vw', md: '530px' },
+              border: "2px solid " + theme.palette.secondary.dark,
+              borderRadius: "18rem 0.25rem 18rem 0.25rem",
             }}
-          />
+            />
         </Grid>
       </Grid>
     </Fragment>
