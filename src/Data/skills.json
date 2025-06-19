@@ -1,18 +1,102 @@
 [
     {
-        "name": "C++",
-        "percentage": 85
+        "section" :"programming languages",
+        "items": [
+            {
+                "name": "C++",
+                "percentage": 62
+            },
+            {
+                "name": "C",
+                "percentage": 55
+            },
+            {
+                "name": "C#",
+                "percentage": 50
+            },
+            {
+                "name": "Python",
+                "percentage": 65
+            },
+            {
+                "name": "HTML",
+                "percentage": 65
+            },
+            {
+                "name": "CSS",
+                "percentage": 74
+            },
+            {
+                "name": "Javascript",
+                "percentage": 67
+            }
+        ]
     },
     {
-        "name": "Python",
-        "percentage": 73
+        "section": "tools",
+        "items": [
+            {
+                "name": "Visual Studio 2022",
+                "percentage": 70
+            },
+            {
+                "name": "Vs Code",
+                "percentage": 70
+            },
+            {
+                "name": "Git",
+                "percentage": 60
+            },
+            {
+                "name": "Cmake",
+                "percentage": 65
+            },
+            {
+                "name": "Krita",
+                "percentage": 85
+            },
+            {
+                "name": "Blender",
+                "percentage": 15
+            }
+        ]
     },
     {
-        "name": "HTML, CSS, Javascript",
-        "percentage": 88
+        "section": "frameworks, engines, & libraries",
+        "items": [
+            {
+                "name": "Unity",
+                "percentage": 60
+            },
+            {
+                "name": "Qt",
+                "percentage": 20
+            },
+            {
+                "name": "ImGui",
+                "percentage": 50
+            },
+            {
+                "name": "Raylib",
+                "percentage": 82
+            },
+            {
+                "name": "OpenGl",
+                "percentage": 30
+            }
+        ]
     },
     {
-        "name": "Problem Solving",
-        "percentage": 92
+        "section": "spoken languages",
+        "items" : [
+            {
+                "name": "English",
+                "percentage": 97
+            },
+            {
+                "name": "Spanish",
+                "percentage": 78
+            }
+        ]
     }
 ]

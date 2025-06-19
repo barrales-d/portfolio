@@ -1,5 +1,6 @@
-import { Box, Typography, LinearProgress, linearProgressClasses } from "@mui/material";
+import { Box, Typography, LinearProgress, linearProgressClasses, Grid } from "@mui/material";
 import { Fragment, useEffect, useState } from "react";
+import { theme } from "../Theme";
 
 const Skillbar = ({ data }) => {
   const [progress, setProgress] = useState(0);
@@ -18,24 +19,46 @@ const Skillbar = ({ data }) => {
   }, [data.percentage, progress]);
 
   return (
-    <Fragment>
-      <Box display="flex" justifyContent="space-between" alignItems="baseline">
-        <Typography variant="h6">{data.name}</Typography>
-        <Typography variant="body2">{data.percentage}&#37;</Typography>
-      </Box>
-      <Box width="100%">
-        <LinearProgress
-          variant="determinate"
-          value={progress}
-          sx={{
-            height: '1rem',
-            borderRadius: 5,
-            [`& .${linearProgressClasses.bar}`]: {
-              borderRadius: 5,
-            }
-          }} />
-      </Box>
-    </Fragment>
+    <Grid item md={6} xs={12}>
+  <Box width="100%" position="relative">
+    <LinearProgress
+      variant="determinate"
+      value={progress}
+      sx={{
+        height: '1.5rem',
+        borderRadius: 5,
+        [`& .${linearProgressClasses.bar}`]: {
+          borderRadius: 5
+        },
+      }}
+    />
+    <Box
+      position="absolute"
+      top={0}
+      left={0}
+      width="100%"
+      height="100%"
+      display="flex"
+      alignItems="center"
+      justifyContent="space-between"
+      padding={1}
+    >
+      <Typography variant="body2" fontWeight="bold"   sx={{
+      color: progress < 15 ? theme.palette.text.primary : theme.palette.secondary.dark,
+      transition: 'color 0.3s ease',
+  }}>
+        {data.name}
+      </Typography>
+      
+      <Typography variant="body2" fontWeight="bold"   sx={{
+      color: progress < 95 ? theme.palette.text.primary : theme.palette.secondary.dark,
+      transition: 'color 0.3s ease',
+  }}>
+        {data.percentage}&#37;
+      </Typography>
+    </Box>
+  </Box>
+</Grid>
   );
 }
 

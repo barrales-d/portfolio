@@ -1,22 +1,32 @@
-import { Grid } from "@mui/material";
+import { Box, Divider, Grid, Typography } from "@mui/material";
 
 import Skillbar from "../Components/Skillbar";
 import Wrapper from "../Components/Wrapper";
 
 import skills from "../Data/skills.json";
+import { Fragment } from "react";
 
 const Skills = ({ animation }) => {
+  console.log(skills);
   return (
     <Wrapper title='Skills' animation={animation}>
-      <Grid container mb={4} spacing={6}>
-        {
-          skills.map(skill => (
-            <Grid item key={skill.name} xs={12} md={6}>
-              <Skillbar data={skill}> </Skillbar>
+      {
+        skills.map(skillBlock => (
+          <Box component="div">
+            <Typography gutterBottom variant="h5" textTransform='capitalize' textAlign='center'>
+              { skillBlock.section }
+            </Typography>
+            <Divider variant="fullWidth" />
+            <Grid mb={4} container spacing={2}>
+            {
+              skillBlock.items.map(skill => (
+                <Skillbar data={skill} />
+              ))
+            }
             </Grid>
-          ))
-        }
-      </Grid>
+          </Box>
+        ))
+      }
     </Wrapper>
   );
 }
