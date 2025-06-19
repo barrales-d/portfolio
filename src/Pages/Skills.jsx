@@ -4,7 +4,6 @@ import Skillbar from "../Components/Skillbar";
 import Wrapper from "../Components/Wrapper";
 
 import skills from "../Data/skills.json";
-import { Fragment } from "react";
 
 const Skills = ({ animation }) => {
   console.log(skills);

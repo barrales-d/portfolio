@@ -1,5 +1,5 @@
 import { Box, Typography, LinearProgress, linearProgressClasses, Grid } from "@mui/material";
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { theme } from "../Theme";
 
 const Skillbar = ({ data }) => {
